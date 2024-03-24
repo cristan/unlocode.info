@@ -154,7 +154,9 @@ class DetailsLoader {
         }
 
         // Functions
-        $toReturn->IATA = null;
+        $iataOverride = $locationFromDb['IATA'];
+        $toReturn->IATA = $iataOverride;
+        $toReturn->possibleIATA = null;
         $function = $locationFromDb['function'];
         if (empty($function)) {
             $toReturn->functions = null;
@@ -162,20 +164,16 @@ class DetailsLoader {
             $functionCodeConverter = new FunctionCodeConverter();
             $toReturn->functions = $functionCodeConverter->convertFunctionCodesToArray($function);
 
-            // Whenever an entry has the airport function, the IATA is the location part of the unlocode...
-            if ($functionCodeConverter->hasAirportFunction($function)) {
-                $toReturn->IATA = $location;
+            // Whenever an entry has the airport function, the IATA is the location part of the unlocode (unless there's a data error or the airport has no IATA)
+            if (!$iataOverride && $functionCodeConverter->hasAirportFunction($function)) {
+                $toReturn->possibleIATA = $location;
             }
         }
-        //... unless it is explicitly defined in the IATA column
-        // (this code could be in the else above: the IATA field should only be filled when the entry has the airport status, but considering the data quality of unlocode, let's put it here just in case)
-        $iataOverride = $locationFromDb['IATA'];
-        if ($iataOverride) {
-            $toReturn->IATA = $iataOverride;
-        }
+        
+        $iata = $iataOverride != "" ? $iataOverride : $toReturn->possibleIATA;
         $otherLocationsWithSameIata = null;
-        if ($toReturn->IATA) {
-            $otherLocationsWithSameIata = $this->getOtherIATAs($country, $location, $subdivision, $toReturn->regionType ?? "Region", $toReturn->IATA, $toReturn->decimalCoordinates, $connection);
+        if ($iata) {
+            $otherLocationsWithSameIata = $this->getOtherIATAs($country, $location, $subdivision, $toReturn->regionType ?? "Region", $iata, $toReturn->decimalCoordinates, $connection);
         }
         $toReturn->otherLocationsWithSameIata = $otherLocationsWithSameIata;
 

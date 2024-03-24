@@ -27,8 +27,7 @@ if (!$details) {
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="flat-remix.min.css">
     <link rel="stylesheet" href="unlocode.css">
-  </head>
-  <style>
+    <style>
 .tooltip {
   position: relative;
   display: inline-block;
@@ -57,6 +56,7 @@ if (!$details) {
   font-size: smaller;
 }
 </style>
+  </head>
   <body class="selectable">
 
   <main>
@@ -93,7 +93,7 @@ function array2ul($array) {
     foreach($array as $key => $elem){
         $out .= "<li>$elem</li>";
     }
-    $out .= "</ul>";
+    $out .= "</ul>\n";
     return $out; 
 }
 
@@ -107,10 +107,10 @@ $iata = $details->IATA;
 if ($iata) {
     echo "<p>IATA: $iata</p>\n";
 }
-// $possibleIATA = $details->possibleIATA;
-// if ($iata) {
-//     echo "<p>Possible IATA <div class='tooltip'>?<span class='tooltiptext'>The location has an airport and no explicitly defined IATA. That means either means that the IATA is $possibleIATA, or the airport doesn't havce a IATA.</span></div>: $iata</p>\n";
-// }
+$possibleIATA = $details->possibleIATA;
+if ($possibleIATA) {
+    echo "<p>Possible IATA<span class='tooltip'>?<span class='tooltiptext'>The location has an airport and no explicitly defined IATA. That means either means that the IATA is $possibleIATA, or the airport doesn't have an IATA.</span></span>: $possibleIATA</p>\n";
+}
 $otherLocationsWithSameIata = $details->otherLocationsWithSameIata;
 if ($otherLocationsWithSameIata) {
     echo "<div>Other ". (count($otherLocationsWithSameIata) == 1 ? "entry" : "entries") ." with same IATA: ";
@@ -144,7 +144,6 @@ if ($coordinates) {
 ?>
 </div>
 </div>
-</section>
 </div>
 <div class="footer">
 From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a><?php
