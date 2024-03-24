@@ -1,0 +1,348 @@
+https://unlocode.info/CVBVC: 0250N 06041W should be 1606N 02248W (the original one is pointing to Boa Vista in Brazil instead of Cape Verde)
+
+https://unlocode.info/INKLR: 1380N 07880E should be 1308N 07808E. already sent to the UN.
+https://unlocode.info/NLDZL 5231N 00656E should be 5320N 00655E
+https://unlocode.info/ROFGA 4951N 02459E point to somewhere in Ukraine. Should be 4551N 02458E. Also, should be Făgăraș instead of just Fagaras.
+https://unlocode.info/CNPUT 2426N 11901E points to inside of a big body of water. Should be 2527N 11900E
+https://unlocode.info/CNLZH 2319N 10924E should be 2419N 10924E
+https://unlocode.info/DEWDF 5037N 01023E should be 4918N 00839E. The coordinates point to Walldorf, Schmalkalden-Meiningen, not Walldorf, Baden-Württemberg.
+https://unlocode.info/CNBAI 4636N 12250E should be 4537N 12250E. There isn't even any rail at the original coordinates.
+https://unlocode.info/EGSCN 4218N 03220E should be 3021N 03220E. How the F did they screw up the SUEZ CANAL this bad??
+https://unlocode.info/USUQT 4053N 07844W should be 4010N 07453W.
+https://unlocode.info/USNIW 3549N 08417W should be 3624N 08702W
+https://unlocode.info/INHLO 2250N 07646E should be 2230N 07328E
+https://unlocode.info/CKPZK 5803N 02614E should be 1051S 16551W. The location is pointing to Puka in Estonia, not in Cook Islands.
+https://unlocode.info/CVBVR 3140S 05635W should be 1451N 02443W
+https://unlocode.info/IRSHS 0511S 11923E should be 3540N 05104E. Original wasn't even in Iran.
+https://unlocode.info/NGAKP 0308S 06049E should be 0559N 00706E. Original was pointing at the ocean.
+https://unlocode.info/PGDAO 1308N 04210E seems to be 0826S 14751E. But maybe it's something completely different? Maybe it's IATA DAO but that's in Indonesia https://maps.app.goo.gl/ESiKbGLPeJK2bqS89. The coordinates are in Eritrea, so not in Papua New Guinea.
+https://unlocode.info/PGKUX 3829N 12602E is in North Korea. 0522S 14138E seems to be correct.
+https://unlocode.info/TRESP Definitely isn't in the middle of the ocean at 0001S 00001W. Maybe it's 3938N 03017E. Otherwise: let's remove the coordinates.
+https://unlocode.info/ATFG7 4840N 16230W should be 4805N 01623E.
+https://unlocode.info/ATABK 4744N 01230W should be 4725N 01226E
+https://unlocode.info/ATGHJ 4822N 15400W should be 4822N 01540E
+https://unlocode.info/CHTTK 4753N 00879W should be 4732N 00848E
+https://unlocode.info/CZG44 4857N 15450W should be 4857N 01545E
+https://unlocode.info/DEFBR 5134N 13013W should be 5248N 01357E
+https://unlocode.info/DEGJ9 4843N 12260W should be 4843N 01226E
+https://unlocode.info/GREFP Coordinates point to the middle of the Atlantic ocean. Efpalio (without N) is at 3826N 02159E
+https://unlocode.info/SISLV 4610N 14420W should be 4610N 01442E. Or it should just be deleted in favor of SILUK.
+
+
+atobviac
+https://unlocode.info/COPBO 1041N 07444W should be 1215N 07158W. Wrong Puerto Bolívar.
+
+Bella Vista in ARBEL You're pointing to Barrio Bella Vista in Santa Fe Argentina, while unlocode points to Bella Vista, Argentina.
+
+Cinta Terminal in IDCIN: Your coordinates point to the Cinta Oil Terminal, while the unlocode coordinates point to the Cinta district. I'm not sure these are the same Cintas.
+
+Colon, Argentina in ARCOO: Your coordinates point to Colón in Entre Ríos instead of Colón in Buenos Aires. I am pretty confident you meant the unlocode ARCOL instead
+
+Dneprovsko-Bugsky in UADNK: The unlocode is the Dnipro city, while yours have the Port Dneprovsko-Bugsky which is somewhere else.
+ 
+Fraser Port in CAFRM: The unlocode location points to a city called Fraser. I think you meant the unlocode CAFSD (Fraser-Surrey Docks) instead.
+
+Haian (Guangdong Province) in CNHAA: I think you meant CNXWH: that's in the Guangdong Province. This is quite significant: these are 1700 km away from each other.
+
+Itacoatiara in BRITA: Again wrong unlocode. You meant BRIAR. Again a huge distance apart.
+
+Munguba, Brazil in BRMGU: That's the unlocode of Mulungu, Brazil which is far away. Weirdly enough, there doesn't seem to be a unlocode of Munguba, Brazil. BRVAJ is close though.
+
+Santana in BRSAN: You meant BRSTN. These are thousands of kilometers away from each other.
+
+Vityaz Marine Terminal in RUVTZ. Your coordinates point to the ocean while the unlocode ones actually point to Vityaz.
+
+// Maybe wrong unlocode?
+https://unlocode.info/SZAGN Location points to Agno in Italy, not Eswatini.
+https://unlocode.info/SZKLB Location points to Kollbrunn in Switzerland
+
+// North South swapped
+https://unlocode.info/CDBNW: Coordinates 0601N 01224E should be 0601S 01224E. North and south are swapped.
+https://unlocode.info/ZASTN: Coordinates 2543N 02817E should be 2543S 02817E. North and south are swapped.
+
+https://unlocode.info/ASPPG Coordinates 1416N 17042W should be 1416S 17042W. North and south are swapped.
+https://unlocode.info/AUMID Coordinates 3153N 11559W should be 3153S 11559E. North and south are swapped. (east and west also swapped)
+https://unlocode.info/BOSCS Coordinates 1748N 06311W should be 1748S 06311W. North and south are swapped.
+https://unlocode.info/CZBRN Coordinates 4933S 01358E should be 4933N 01358E. North and south are swapped.
+https://unlocode.info/CZKLM Coordinates 5010S 01457W should be 5010N 01457E. North and south are swapped. (east and west also swapped)
+https://unlocode.info/DOHBJ Coordinates 1825S 07002W should be 1825N 07002W. North and south are swapped.
+https://unlocode.info/DOBAV Coordinates 1843S 06827W should be 1843N 06827W. North and south are swapped.
+https://unlocode.info/DOGAZ Coordinates 1937S 07017W should be 1937N 07017W. North and south are swapped.
+https://unlocode.info/DOGYB Coordinates 1937S 07119W should be 1937N 07119W. North and south are swapped.
+https://unlocode.info/DOGRB Coordinates 1920S 07047W should be 1920N 07047W. North and south are swapped.
+https://unlocode.info/DOHMR Coordinates 1846S 06915W should be 1846N 06915W. North and south are swapped.
+https://unlocode.info/DOPIA Coordinates 1850S 07018W should be 1850N 07018W. North and south are swapped.
+https://unlocode.info/KRDGU Coordinates 3734S 12702E should be 3734N 12702E. North and south are swapped.
+https://unlocode.info/OMALA Coordinates 2336S 05832E should be 2336N 05832E. North and south are swapped.
+https://unlocode.info/PELCE Coordinates 1206N 07703W should be 1206S 07703W. North and south are swapped.
+https://unlocode.info/PGKRK Coordinates 0850N 14632E should be 0850S 14632E. North and south are swapped.
+https://unlocode.info/PLBEZ Coordinates 5419S 02043E should be 5419N 02043E. North and south are swapped.
+https://unlocode.info/PTRML Coordinates 4110S 00839W should be 4110N 00839W. North and south are swapped.
+https://unlocode.info/PYLUQ Coordinates 2516N 05734W should be 2516S 05734W. North and south are swapped.
+https://unlocode.info/PYVEL Coordinates 2521N 05737W should be 2521S 05737W. North and south are swapped.
+https://unlocode.info/RORNN Coordinates 4618S 02308E should be 4618N 02308E. North and south are swapped.
+https://unlocode.info/RWRW4 Coordinates 0157N 03026E should be 0157S 03026E. North and south are swapped. 
+https://unlocode.info/SZMHU Coordinates 2602N 03151E should be 2602S 03151E. North and south are swapped.
+https://unlocode.info/ZABA4 Coordinates 2639N 02835E should be 2639S 02835E. North and south are swapped.
+https://unlocode.info/ZAEZK Coordinates 2836N 02955E should be 2836S 02955E. North and south are swapped.
+https://unlocode.info/ZAGTV Coordinates 2646N 02829E should be 2646S 02829E. North and south are swapped.
+https://unlocode.info/ZAMBK Coordinates 2958N 03058E should be 2958S 03058E. North and south are swapped.
+https://unlocode.info/ZAMNG Coordinates 2604N 02803E should be 2604S 02803E. North and south are swapped.
+https://unlocode.info/ZAMUL Coordinates 2602N 02751E should be 2602S 02751E. North and south are swapped.
+https://unlocode.info/ZARPT Coordinates 2950N 03100E should be 2950S 03100E. North and south are swapped.
+https://unlocode.info/ZAPLN Coordinates 3355N 01830E should be 3355S 01830E. North and south are swapped. 
+https://unlocode.info/ZASHM Coordinates 2615N 02801E should be 2615S 02801E. North and south are swapped.
+https://unlocode.info/ZASHG Coordinates 2351N 02923E should be 2351S 02923E. North and south are swapped.
+https://unlocode.info/ZASTN Coordinates 2543N 02817E should be 2543S 02817E. North and south are swapped.
+
+
+// East west swapped
+https://unlocode.info/ATDRA 4845N 01639W should be 4845N 01639E
+https://unlocode.info/BDMUN 2333N 09032W should be 2333N 09032E
+https://unlocode.info/CABAC 5350N 11325E should be 5350N 11325W
+https://unlocode.info/CAEDB 5247N 11247E should be 5247N 11247W
+https://unlocode.info/CAFOM 4929N 11126E should be 4929N 11126W
+https://unlocode.info/CARPE 4946N 09726E should be 4946N 09726W
+https://unlocode.info/CNSTN 2312N 11345W should be 2312N 11345E
+https://unlocode.info/CZKTY 4932N 01715W should be 4932N 01715E
+https://unlocode.info/DES2L 5124N 01252W should be 5124N 01252E
+https://unlocode.info/DEGYM 5040N 00844W should be 5040N 00844E
+https://unlocode.info/DENBT 5116N 01410W should be 5116N 01410E
+https://unlocode.info/DENKB 4918N 00858W should be 4918N 00858E
+https://unlocode.info/DERWM 4801N 00846W should be 4801N 00846E
+https://unlocode.info/DEJRG 4904N 00943W should be 4904N 00943E
+https://unlocode.info/DESOI 5030N 01232W should be 5030N 01232E
+https://unlocode.info/DESMO 5411N 01239W should be 5411N 01239E
+https://unlocode.info/DEWNT 5215N 01024W should be 5215N 01024E
+https://unlocode.info/DEWFF 4833N 01146W should be 4833N 01146E
+https://unlocode.info/DEWXY 5121N 01151W should be 5121N 01151E
+https://unlocode.info/GRKMT 4059N 02403W should be 4059N 02403E
+https://unlocode.info/GRZAQ 3709N 02430W should be 3709N 02430E
+https://unlocode.info/GUSAN 1323N 14440W should be 1323N 14440E
+https://unlocode.info/HRDJE 4522N 01816W should be 4522N 01816E
+https://unlocode.info/HUBRC 4752N 01925W should be 4752N 01925E
+https://unlocode.info/HUPED 4609N 01825W should be 4609N 01825W
+https://unlocode.info/IDTZD 0110N 12434W should be 0110N 12434E
+https://unlocode.info/ILKKN 3245N 03521W should be 3245N 03521W
+https://unlocode.info/ILYON 3219N 03456W should be 3219N 03456E
+https://unlocode.info/ILSDE 3145N 03441W should be 3145N 03441E
+https://unlocode.info/INRAR 1612N 07722W should be 1612N 07722E
+https://unlocode.info/ISHEA 6350N 02024E should be 6350N 02024W
+https://unlocode.info/JPFKG 3541N 13948W should be 3541N 13948E
+https://unlocode.info/LKHET 0716N 08005W should be 0716N 08005E
+https://unlocode.info/LVBAL 5708N 02715W should be 5708N 02715E
+https://unlocode.info/MXVEP 1851N 09651E should be 1851N 09651W
+https://unlocode.info/MYSBS 0303N 10142W should be 0303N 10142E
+https://unlocode.info/NGJBD 0649N 00356W should be 0649N 00356E
+https://unlocode.info/NLBDV 5157N 00637W should be 5157N 00637E
+https://unlocode.info/NLDBG 5302N 00447W should be 5302N 00447E
+https://unlocode.info/PTETB 3709N 00829E should be 3709N 00829W
+https://unlocode.info/PTFTC 3852N 00903E should be 3852N 00903W
+https://unlocode.info/ROCVA 4436N 02556W should be 4436N 02556E
+https://unlocode.info/SKDJZ 4805N 01716W should be 4805N 01716E. Or it should just be deleted. SKDZJ has identical info except it has correct diacretics and already correct coordinates.
+https://unlocode.info/SKJAO 4759N 01824W should be 4759N 01824E. Or it should just be deleted. SKJSV has identical info except it has correct diacretics and already correct coordinates.
+https://unlocode.info/SVSSO 1344N 08929E should be 1344N 08929W
+https://unlocode.info/TNJAR 3330N 01106W should be 3330N 01106E
+https://unlocode.info/TRSRS 3640N 03613W should be 3640N 03613E
+https://unlocode.info/USAXK 5152N 17639E should be 5152N 17639W
+https://unlocode.info/USOCB 4102N 07336E should be 4102N 07336W
+https://unlocode.info/USP5T 3211N 08345E should be 3211N 08345W
+https://unlocode.info/USR8H 3916N 11459E should be 3916N 11459W
+https://unlocode.info/USSD9 4008N 08613E should be 4008N 08613W
+https://unlocode.info/USLY3 3158N 08436E should be 3158N 08436W
+https://unlocode.info/USWY4 4146N 07624E should be 4146N 07624W
+https://unlocode.info/VETIN 0955N 06818E should be 0955N 06818W
+https://unlocode.info/ZAWDM 3355S 01831W should be 3355S 01831E
+
+
+Most likely:
+https://unlocode.info/MXESO 2020N 10430W should be 2031N 10311W. No obvious typo, just pointing to the middle of nowhere somewhere in the region.
+https://unlocode.info/CNDMY "Damaiyu". Coordinates 2511N 11936E (25.18333,119.60000) points to a barren rock Damai Islands. 2805N 12109E points to Yuhuan Damaiyu Port which is probably the one they mean.
+https://unlocode.info/ARSPD 3341S 05910W should be 3146S 06025W Don't see where this went wrong.
+https://unlocode.info/CNSTI 2359N 11354E should be 2359N 11354E. The original coordinates are in the middle of nowhere, with no water in sight, so no port.
+
+
+False positives:
+https://unlocode.info/CNCNA Yes, there's another one in the exact same state further away, but also this one. Nominatum also returns that with the query https://nominatim.openstreetmap.org/search?format=jsonv2&accept-language=en&addressdetails=1&limit=10&city=Changsha&country=CN.
+I would wager UNLOCODE is correct
+
+https://unlocode.info/UAYUZ The Pivdennyi port is super nearby the provided coordinates
+https://unlocode.info/CNYUE There's a Yueqing Town at the provided coordinates, so that's probably good.
+ROBAB Google finds Murfatlar when I'm searching for Basarabi
+https://unlocode.info/DEBIB Maps shows a Biberach in Baden-Württemberg
+https://unlocode.info/CLCHB Maps shows port Chacabuco
+https://unlocode.info/MXECA Maps shows Nuevo León which is a road junction
+MXESC General Escobedo is really close. I believe it.
+https://unlocode.info/CNHNI Hengli village around the corner
+LYKHM Right where Chomsk is
+KHKOS Right outside at the water. Big city. Good enough
+ECLLD 105 km away, but actually very good.
+PHLEY Other Leyte really close
+https://unlocode.info/NOMOL That's fine
+CNSAN Shows Shiwan Town
+PRSJU Shows San Juan
+CLSVE Nominatim shows another one
+CNTAP Google Maps shows this one
+CNYOU 
+CNYUE Shows Yueqing Town. Might still be wrong though.
+UAYUZ Close enough
+CASJF Super false positive: smack in the middle
+CLCRR Super obscure, but seems right
+CNZZU Close enough, but still wrong. Should point to the harbor.
+ARLPS The other las palmas
+CNCQI Shows a Chongqing
+BEHAW At least 1 Ham around.
+
+I don't know
+https://unlocode.info/CNHEB Points to the middle of nowhere in China (nothing there), but Nominatim also points to a very small thingie.
+CNHUG I can't seem to find a Huanggang in Guangdong Sheng.
+VNDNA Yeah, whatever. It seems to be a name of a region, not a city.
+CNPGZ Neither nominatim or google maps seems to find it.
+VNPHG ??
+CNXNA It's probably wrong, but nominatim can't find a good alternative, and Google Maps shows a tiny, tiny little thing.
+CNXSN don't know enough Chinese
+CNYTN Who knows?
+CNJSI Probably wrong. Don't really care.
+IDPER Almost certainly wrong. I don't see a port though.
+ESQER Don't know which one. Both close enough.
+
+Missing coordinates:
+NLTLB should have 5133N 00505E
+
+**perfect_allCountries.csv** (noted are the ones where unlococde is wrong):
+https://unlocode.info/USZAV 3846N 10757W should be 3719N 09335W
+https://unlocode.info/CHTTK coordinates point to the middle of the ocean. I'm pretty sure 4732N 00848E is meant: https://de.wikipedia.org/wiki/Altikon
+https://unlocode.info/MYBAH 0490N 10225E should be 0248N 10224E
+https://unlocode.info/TRBAH might be wrong, but it's not super obvious and the correct coordinates are close enough
+https://unlocode.info/CNBSH There's no Baishan there. Could either be Baishan village at 40.1661,116.3229 (4010N 11619E), or more likely, https://en.wikipedia.org/wiki/Baishan at 41.9369269, 126.4184919 (4156N 12625E). It doesn't help that the region code is 22, which isn't present.
+https://unlocode.info/USUHY (Bear River City): 4136N 01127W should be 4137N 11208W (typo, over 7000 km away!)
+https://unlocode.info/USYVK 3734N 08742W should be 3734N 08342W
+https://unlocode.info/USELF 4353N 10311W should be 4653N 10311W (typo)
+https://unlocode.info/USXBU 4215N 07804W should be 4050N 07505W
+https://unlocode.info/USBB4 Might be wrong, but who knows what is meant by "Big Bend" in Texas?
+https://unlocode.info/FRZBV 4508N 00100E should be 4811N 00123E
+https://unlocode.info/USZHN 4018N 07349W should be 4019N 07949W
+https://unlocode.info/USRZY 4802N 01150W should be 4802N 11150W (typo, well over 6000 km away!)
+https://unlocode.info/USVBJ 3310N 09029W should be 3103N 08911W
+https://unlocode.info/CHBUU 4733N 09004E should be 4733N 00904E (typo, almost 6000 km away!)
+https://unlocode.info/USCU3 3956N 10141W should be 3732N 08715W
+// from now on, I only started caring about more than 1000 km away
+https://unlocode.info/USCJU 4300N 08902W should be 3750N 12210W
+https://unlocode.info/USRWX (Casselton): 4654N 01239W should be 4654N 09713W
+https://unlocode.info/USEAF (Clear Lake): 3408N 09324W should be 4309N 09323W (typo)
+https://unlocode.info/USGFP (Gulfport): 4725N 08242W should be 2745N 08242W (typo)
+https://unlocode.info/US2HA (Hamilton): 4132N 07126W should be 4831N 12159W
+https://unlocode.info/USLQ8 (La Quinta): 3657N 07921W should be 3341N 11618W
+https://unlocode.info/USINQ (Monroe): 3321N 09710W should be 4045N 08456W
+https://unlocode.info/USNK3 (Noank): 4119N 05179W should be 4120N 07159W (typo)
+https://unlocode.info/USZOG (Orogrande): Coordinates point to the one in Idaho, not in New Mexico. Should be 3223N 10605W
+https://unlocode.info/USPI9 (Pittsburg): Coordinates point to Pittsburg, California, not Pittsburg, Pennsylvania. Unclear what is meant. Pittsburgh, Pennsylvania? Or the hamlet actually called Pittsburg at 40.9328397,-80.3633981?
+https://unlocode.info/MTSTV (Santa Venera): Coordinates 3553N 14284E should be 3553N 01428E (typo, 10000 km away!)
+https://unlocode.info/USSP8 (Springtown): Coordinates 3807N 12214W should be 3258N 09741W
+https://unlocode.info/USTKB (Sugarland): Coordinates 3427N 09157W should be 3906N 07723W
+https://unlocode.info/USSD5 (Sundance): Coordinates 2335N 13454W should be 4022N 11133W
+https://unlocode.info/USZKL (Tarpon Springs): Coordinates 2845N 02845W should be 2809N 08245W (typo, 5000km away!)
+https://unlocode.info/USTYC (Taylorsville): Coordinates 4040N 01157W should be 4040N 11157W (typo, almost 8000 km away!)
+https://unlocode.info/USVIX (Viola): Coordinates 3027N 04013W should be 4330N 09040W (4500km away!)
+https://unlocode.info/USAKF (Wakefield): Coordinates point to Wakefield, Illinois instead of Ohio. Should be 4126N 07130W
+https://unlocode.info/USWVH (Waverly): Coordinates 4231N 07453W should be 4126N 07130W
+https://unlocode.info/USWCZ (Wellington): Coordinates 4932N 08741W should be 4032N 08741W (typo, 1000km away)
+https://unlocode.info/USYWX (White): Coordinates 4317N 08445W should be 4032N 08741W
+https://unlocode.info/USWMP (Whitmore Lake): 4325N 07554W should be 4226N 08345W
+https://unlocode.info/US5WS (Willow Street): 3058N 07616W should be 3959N 07617W (typo, 1000km away)
+https://unlocode.info/MTXWK (Xewkija): 3615N 14152E should be 3602N 01415E
+
+**good_allCountries.csv** (noted are the ones where unlococde is by more than 1000km):
+https://unlocode.info/NGABA (Abakaliki): Coordinates 0620N 08600E should be 0619N 00807E.
+https://unlocode.info/HUGSA (Abda): Coordinates 4742N 17330E should be 4742N 01733E (typo).
+https://unlocode.info/ATFG7 (Achau): Coordinates 4840N 16230W should be 4805N 01623E.
+https://unlocode.info/DEADL (Adelschlag): Coordinates 4883N 11221E should be 4850N 01113E.
+https://unlocode.info/NGAKP (Akpo): Coordinates are wrong. Unsure which Akpo is meant. 7.5021,8.1848? 7.216667,7.1? 5.95,7.1? Neither seem to have a port. Maybe the offshore field? https://en.wikipedia.org/wiki/Akpo
+https://unlocode.info/PHAEL (Alabel): Coordinates 6522N 12516E should be 0606N 12517E.
+https://unlocode.info/DEXRN (Ammern): Coordinates 5114N 10270E should be 5114N 01027E (typo). 
+https://unlocode.info/HUAND (Andocs): Coordinates 4664N 17920E should be 4639N 01756E.
+https://unlocode.info/CAAPI (Appin): Coordinates 3853N 00902W should be 4248N 08139W.
+https://unlocode.info/DEDLE (Badersleben): Coordinates 5198N 10887E should be 5159N 01053E.
+https://unlocode.info/MABES (Ben Slimane): Coordinates 3336N 07071W should be 3337N 00707W (typo).
+https://unlocode.info/RUBEE (Berezovskiy): Coordinates are wrong. Can't find a Berezovskiy in Zabaykal'skiy kray (ZAB), so I don't know what village is meant here. I can find one in Sverdlovsk Oblast or Chelyabinsk Oblast.
+https://unlocode.info/DEDSA (Blankenheim): Coordinates 5131N 11250E should be 5131N 01125E (typo, 6000km away)
+https://unlocode.info/GBDUO (Burnopfield): Coordinates 5409N 17167W should be 5454N 00143W.
+https://unlocode.info/CZG44 (Chvalatice): Coordinates 4857N 15450W should be 4857N 01545E (typo, over 9000km away)
+https://unlocode.info/ITCPJ (Coppito): Coordinates 4222N 13020E should be 4222N 01320E (typo, over 8000km away). 
+https://unlocode.info/PTCUS (Custoias): Coordinates 4120N 08633W should be 4112N 00839W
+https://unlocode.info/SIDBO (Dobrovo): Coordinates 4559N 13315E should be 4559N 01332E (typo, over 8000km away)
+https://unlocode.info/IEDRI (Drinagh): Coordinates 5139N 14945W should be 5139N 00909W
+https://unlocode.info/DEUNG (Dunningen): Coordinates 4813N 08300E should be 4813N 00830E (typo, over 5000 km away).
+https://unlocode.info/DEWVD (Elsdorf): Coordinates 5314N 09210E should be 5315N 00921E (typo)
+https://unlocode.info/ITEND (Endine Gaiano): Coordinates 4548N 09590E should be 4548N 00959E (typo).
+https://unlocode.info/DEFBR (Falkenberg): Coordinates 5134N 13013W should be 5248N 01357E
+https://unlocode.info/DEFAB (Fallersleben): Coordinates 5225N 10430E should be 5225N 01043E (typo)
+https://unlocode.info/AUFEL (Felixstow): Coordinates 5158S 00121E should be 3453S 13839E.
+https://unlocode.info/DEFKN (Freienbrink): Coordinates 5237N 13800E should be 5223N 01348E.
+https://unlocode.info/RUGAL (Galenki): Coordinates 5423N 03527E should be 4403N 13146E. 
+https://unlocode.info/ITDGD (Gandellino): Coordinates 4600N 09570E should be 4600N 00957E (typo).
+https://unlocode.info/CHGIK (Gisikon): Coordinates 4770N 08240E should be 4708N 00824E.
+https://unlocode.info/ITZZG (Grazzano Badoglio): Coordinates 4502N 08190E should be 4502N 00819E. (typo)
+https://unlocode.info/DEHBA (Habaching): Coordinates 1125N 04773E should be 4744N 01115E.
+https://unlocode.info/DEHYR (Haynrode): Coordinates 5126N 10290E should be 5127N 01027E. 
+https://unlocode.info/DKHHS (Hedehusene): Coordinates 5539N 12120E should be 5539N 01212E (typo). 
+https://unlocode.info/SEHJB (Hjälteby): Coordinates 5830N 11420E should be 5803N 01142E (typo).
+https://unlocode.info/CZHLC (Holice): Coordinates 4934N 17180E should be 4934N 01718E (typo)
+https://unlocode.info/CZHNI (Hranice): Coordinates 4933N 17440E should be 4933N 01744E (typo)
+https://unlocode.info/SEHRV (Härslöv): Coordinates 5556N 12520E should be 5556N 01252E (typo)
+https://unlocode.info/DECHS (Höchstädt an der Donau): Coordinates 4836N 10340E should be 4836N 01034E (typo).
+https://unlocode.info/DEZVE (Ihrlerstein): Coordinates 4856N 11520E should be 4856N 01152E (typo)
+https://unlocode.info/DEKED (Keulrod): Coordinates 5033N 10410E should be 5033N 01041E (typo)
+https://unlocode.info/GBREE (Kings Bromley): Coordinates 5244N 14900W should be 5244N 00149W (typo)
+https://unlocode.info/ATKBA (Kirchbach): Coordinates 4757N 15732E are wrong. Coordinates should probably be 4838N 01355E, but there are many Kirchbachs in Austria.
+https://unlocode.info/SIKOM (Komen): Coordinates 4548N 13445E should be 4548N 01345E (typo)
+https://unlocode.info/CZSTK (Kralovice): Coordinates 5020N 14380E are wrong. Should probably be 4959N 01329E, but there are multiple Kralovices and there is no region defined for ST, so it's not 100% clear what region is meant.
+https://unlocode.info/RUKSN (Krasnoyarsk): Coordinates 4722N 14232E should be 5126N 06009E.
+https://unlocode.info/SIKRO (Kropa): Coordinates 4617N 14120E should be 4617N 01412E (typo)
+https://unlocode.info/CZUKK (Krupka): Coordinates 5041N 13520E should be 5041N 01352E (typo)
+https://unlocode.info/ATGHJ (Krustetten): Coordinates 4822N 15400W should be 4822N 01540E (typo)
+https://unlocode.info/DEKZN (Künzing): Coordinates 4840N 13050E should be 4840N 01305E (typo)
+https://unlocode.info/ATLAU (Launsdorf): Coordinates 4676N 14454E should be 4646N 01427E
+https://unlocode.info/GBIRE (Leire): Coordinates 5230N 11340W should be 5231N 00114W.
+https://unlocode.info/DELSH (Limeshain): Coordinates 5015N 08592E should be 5015N 00859E (typo)
+https://unlocode.info/DEMNT (Mainhardt): Coordinates 4907N 09556E should be 4905N 00933E.
+https://unlocode.info/ZMMAK (Makeni): Coordinates 2415S 17250E are obviously wrong. Unclear what is meant. The Makeni suburb at 1528S 02815E?
+https://unlocode.info/DEMRC (March): Coordinates 4859N 13400E should be 4859N 01304E (typo)
+https://unlocode.info/PLMNN (Margonin): Coordinates 5258N 17600E should be 5258N 01706E
+https://unlocode.info/DEGJ9 (Mengkofen): Coordinates 4843N 12260W should be 4843N 01226E (typo)
+https://unlocode.info/LKMIL (Millaniya): Coordinates 0639N 01448E should be 0641N 08001E.
+https://unlocode.info/IDMUW (Muara Teweh): Coordinates 5658S 11454E should be 0057S 11454E. (typo)
+https://unlocode.info/UAMYR (Myronivka): Coordinates 4939N 30590E should be 4939N 03059E. (typo)
+https://unlocode.info/HUNGB (Nagybajom): Coordinates 4623N 17310E should be 4623N 01731E (typo)
+https://unlocode.info/PHNAV (Navotas): Coordinates 1439N 01205E should be 1439N 12057E (typo)
+https://unlocode.info/DEEAE (Neuenhagen): Coordinates 5358N 11000E should be 5358N 01100E (typo)
+https://unlocode.info/DEOMN (Obermeitingen): Coordinates 4814N 10808E should be 4809N 01048E
+https://unlocode.info/PTPED (Pedreiras): Coordinates 3827N 09043W should be 3827N 00904W (typo).
+https://unlocode.info/CNPJS (Pizhou): Coordinates 1841N 05701E should be 3420N 11800E.
+https://unlocode.info/TRESP (Porsuk): Coordinates 0001S 00001W are wrong. 
+https://unlocode.info/ESPUG (Puigpelat): Coordinates 4117N 11755E should be 4117N 00118E  (typo).
+https://unlocode.info/PTREC (Recarei): Coordinates 4112N 08380W should be 4112N 00838W. (typo)
+https://unlocode.info/DERHS (Reinhardtsdorf-Schöna): Coordinates 1412N 05053E should be 5053N 01412E (the 2 coordinates are switched) 
+https://unlocode.info/PTRIB (Ribeira de Frades): Coordinates 4012N 08290W should be 4012N 00829W (typo)
+https://unlocode.info/ATKAT (Riegersdorf): Coordinates 4654N 13784E should be 4633N 01347E
+https://unlocode.info/NZZNE (Riverlands): Coordinates 3332S 01836E should be 4131S 17359E
+https://unlocode.info/ATSAC (Sachsenburg): Coordinates 4650N 13211E should be 4650N 01321E (typo).
+https://unlocode.info/SASAL (Salwá): Coordinates 2444N 05045 (invalid) should be 2444N 05045E
+https://unlocode.info/NISFL (San Francisco Libre): Coordinates 1230N 01618W should be 1230N 08618W (typo)
+https://unlocode.info/DEBYA (Schondorf am Ammersee): Coordinates 4830N 11500E should be 4803N 01105E.
+https://unlocode.info/CZSAI (Sebranice): Coordinates 4947N 16150E should be 4947N 01615E (typo).
+https://unlocode.info/PTSOG (Sobradelo da Goma): Coordinates 4134N 08110W should be 4134N 00811W (typo).
+https://unlocode.info/IDSUK (Sukabumi): Coordinates 6551S 10655E should be 0655S 10655E (typo).
+https://unlocode.info/PFTAI (Taiohae): Coordinates 0854S 04006W should be 0854S 14006W (typo).
+https://unlocode.info/CZSHC (Tehovec): Coordinates 4959N 14440E should be 4959N 01444E (typo).
+https://unlocode.info/SITEP (Tepanje): Coordinates 4620N 15283E should be 4620N 01528E (typo)
+https://unlocode.info/SKTRK (Trakovice): Coordinates 4826N 17042E should be 4826N 01742E (typo)
+https://unlocode.info/SKTBC (Trebatice): Coordinates 4836N 17450E should be 4836N 01745E (typo)
+https://unlocode.info/SITRE (Trebnje): Coordinates 4551N 15118E should be 4554N 01501E.
+https://unlocode.info/ZAUHL (Umhlali): Coordinates 2946S 31219E should be 2929S 03113E
+https://unlocode.info/ESGCV (Vega de San Mateo): Coordinates 2810N 15320W should be 2801N 01532W. (typos)
+https://unlocode.info/ESVVU (Vilanova de Arousa): Coordinates 4234N 08050W should be 4234N 00850W (typo)
+https://unlocode.info/SEVKR (Vreta Kloster): Coordinates 5828N 15030E should be 5828N 01530E. (typo)
+https://unlocode.info/LKWLP (Wellampitiya): Coordinates 0000N 00000E should be 0656N 07953E.
+https://unlocode.info/PLWIU (Widuchowa): Coordinates 5307N 14230E should be 5307N 01423E (typo).
+https://unlocode.info/ATWIS (Wolfsberg im Schwarzautal): Coordinates 4885N 15659E should be 4651N 01540E.

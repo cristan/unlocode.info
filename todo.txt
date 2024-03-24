@@ -1,0 +1,47 @@
+Detail scherm
+* Dubbele entries in de region (is er maar 1: MA, KES)
+
+State alleen achter de plaatsnaam zetten in product detail staan als de naam niet uniek is in de detail pagina?
+
+NLHAG: 5205N 00418E tonen als 52° 05' N, 004° 18' E (zodat je het oa in maps kan plakken)
+
+Extra data sources:
+* AtoBviaC https://atobviac.com/ReleaseInformation/PortsList
+* Nominatim
+* DataHub.io Airport Codes https://datahub.io/core/airport-codes
+
+Done:
+
+SEO:
+* Toevoegen aan Google: https://www.conductor.com/academy/google-index/faq/submit-url/
+* Toevoegen aan Bing: https://www.bing.com/webmasters/help/add-and-verify-site-12184f8b
+
+*Redirect naar upperCase: unlocode.info/aDalV => unlocode.info/ADALV
+* Region can't be resolved
+
+Boel werkend maken
+* Redirect to https
+* Unlocodes als USSO7 ondersteunen
+* Van wanneer: "01 - 05" veranderen naar January 2005
+* Resolve SubDiv
+* WTF: dubbele entries: Bijv AXMHQ
+* IATA
+* Coordinaten ook digitaal tonen
+* Echte kaart
+
+Home screen
+* Instructies over hoe te gebruiken
+* Lijst landen
+
+Land Detail
+* Overzicht unlocodes
+
+Pretty maken
+* CSS maken
+
+Country:
+https://unlocode.info/country/US State achter identieke plaatsnamen zetten (zoals de verschillende Houstons)
+
+
+* Beschrijving
+* Sitemap

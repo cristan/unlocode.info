@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Testcases unlocode.info</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="flat-remix.min.css">
+    <link rel="stylesheet" href="unlocode.css">
+</head>
+
+<body class="selectable">
+    <ul>
+    <li>Extensive remarks (with Cf & @Coo).</li>
+    <li>Special characters.</li>
+    </ul>
+    <a href='https://unlocode.info/BRSPB'>unlocode.info/BRSPB</a><br/>
+    <br/>
+    <ul>
+        <li>Entry to be removed</li>
+        <li>Use remark:</li>
+    </ul>
+    <a href='https://unlocode.info/CNXNT'>unlocode.info/CNXNT</a><br/>
+    
+    <br/>
+    multiple names:<br/>
+    <a href='https://unlocode.info/BEBRU'>BEBRU</a><br/>
+    <a href='https://unlocode.info/USGGG'>USGGG</a><br/>
+
+    <br/>
+    <strong>IATA</strong><br/>
+    IATA doesn't match the unlocode:<br/>
+    <a href='https://unlocode.info/USBSO'>USBSO</a><br/>
+    IATA does match:<br/>
+    <a href='https://unlocode.info/NLRTM'>NLRTM</a><br/>
+    IATA present, but no airport status:<br/>
+    <a href='https://unlocode.info/AEAJM'>AEAJM</a> (maybe this is on purpose? The airport is still under construction)<br/>
+    Query to find these: SELECT *  FROM `CodeList` WHERE `function` not LIKE '%4%' and IATA != "";<br/>
+    <br/>
+    Query: 
+SELECT <br/>
+    t.location,<br/>
+    COUNT(*) AS duplicate_count<br/>
+FROM (<br/>
+    SELECT <br/>
+        CASE <br/>
+            WHEN IATA != '' THEN IATA <br/>
+            ELSE location <br/>
+        END AS location<br/>
+    FROM <br/>
+        CodeList<br/>
+    WHERE <br/>
+        function LIKE '%4%'<br/>
+) AS t<br/>
+WHERE <br/>
+    t.location != ''<br/>
+GROUP BY <br/>
+    t.location<br/>
+HAVING <br/>
+    COUNT(*) > 1;    <br/>
+    <br/>
+        Entry with a duplicated IATA:<br/>
+    <a href='https://unlocode.info/NOALF'>NOALF</a> vs <a href='https://unlocode.info/BRALF'>BRALF</a><br/>
+     Entry with a triple IATA:<br/>
+    <a href='https://unlocode.info/BRGUI'>BRGUI</a><br/>
+    Entry with insane IATAs:<br/>
+    <a href='https://unlocode.info/USBSO'>USBSO</a><br/>
+    One where the other IATA is too far away:<br/>
+    <a href='https://unlocode.info/CAGEO'>CAGEO</a><br/>
+    One where the other IATA is in another state:<br/>
+    <a href='https://unlocode.info/CAKGN'>CAKGN</a><br/>
+    <br/>
+    <br/>
+    Does not exist:<br/>
+    <a href='https://unlocode.info/XXXXX'>XXXXX</a><br/>
+
+    <br/>
+    No region:<br/>
+    <a href='https://unlocode.info/IMDGS'>IMDGS</a><br/>
+
+    <br/>
+    Region without name:<br/>
+    <a href='https://unlocode.info/ADEAC'>ADEAC</a><br/>
+    
+
+    <br/>
+    Entry without status code:<br/>
+    <a href='https://unlocode.info/SANEO'>SANEO</a><br/>
+
+</body>
+
+</html>
