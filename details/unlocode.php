@@ -27,35 +27,13 @@ if (!$details) {
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="flat-remix.min.css">
     <link rel="stylesheet" href="unlocode.css">
-    <style>
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #616161;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 5px;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  font-size: smaller;
-}
-</style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+       crossorigin=""></script>
   </head>
   <body class="selectable">
 
@@ -139,7 +117,14 @@ if ($coordinates) {
 <div style="flex: 3;">
 <?php
 if ($coordinates) {
-    echo '<iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=12&center='. urlencode($details->decimalCoordinates->latitude .",". $details->decimalCoordinates->longitude) .'&key=AIzaSyDQvt-CZgnIcXjMw2boq46oaAKAjDjbNIM"></iframe>';
+    //echo '<iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=12&center='. urlencode($details->decimalCoordinates->latitude .",". $details->decimalCoordinates->longitude) .'&key=AIzaSyDQvt-CZgnIcXjMw2boq46oaAKAjDjbNIM"></iframe>';
+    echo "<div id='leafletMap'></div>";
+    echo "<script>var map = L.map('leafletMap').setView([".$details->decimalCoordinates->latitude.", ". $details->decimalCoordinates->longitude ."], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>'
+    }).addTo(map);
+    </script>";
 }
 ?>
 </div>

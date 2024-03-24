@@ -1,3 +1,4 @@
+
 h1 {
     margin-top: 0.1em;
     margin-bottom: 0.5em;
@@ -32,14 +33,44 @@ a:visited {
     display:flex;
 }
 
-.map {
+.footer {
+    text-align:center;margin:10px 0;
+}
+
+.map, #leafletMap {
     width: 100%;
     height: 450px;
 }
 
-.footer {
-    text-align:center;margin:10px 0;
-}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* Needed to be here to hover over the leaflet map */
+    z-index: 1000;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #616161;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    font-size: smaller;
+  }
 
 @media (max-width:480px)  { 
     .divsContainer {
