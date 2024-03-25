@@ -11,8 +11,6 @@ $sitemap1Loc = $sitemap1->addChild('loc', "https://unlocode.info/sitemap1.xml");
 
 
 // Sitemap 2-x: the unlocodes
-
-
 $connection = setupDb();
 
 // Current amount of results: 115928
@@ -24,15 +22,10 @@ $numSitemaps = $numEntries / $numResultsPerSitemap;
 
 
 foreach(range(2,$numSitemaps+2) as $index) {
-    $sitemap1 = $xml->addChild('sitemap');
-    $sitemap1Loc = $sitemap1->addChild('loc', "https://unlocode.info/sitemap$index.xml");
+    $unlocodesSiteMap = $xml->addChild('sitemap');
+    $unlocodesSiteMap->addChild('loc', "https://unlocode.info/sitemap$index.xml");
+    $unlocodesSiteMap->addChild('lastmod', $unlocodeLastMod);
 }
-//SELECT COUNT(DISTINCT country, location) FROM `CodeList`;
-/*
-<sitemap>
-    <loc>https://unlocode.info/sitemap1.xml</loc>
-  </sitemap>
-*/
 
 header('Content-type: text/xml');
 print($xml->asXML());
