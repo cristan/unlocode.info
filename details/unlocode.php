@@ -110,7 +110,7 @@ if ($remarks) {
 }
 $coordinates = $details->coordinates;
 if ($coordinates) {
-    echo "<p>Coordinates: $coordinates (".$details->decimalCoordinates->latitude .", ". $details->decimalCoordinates->longitude .")</p>\n";
+    echo "<p>Coordinates: $coordinates => ".$details->degreesCoordinates->latitude .", ". $details->degreesCoordinates->longitude ." or ". $details->decimalCoordinates->latitude .", ". $details->decimalCoordinates->longitude ."</p>\n";
 }
 ?>
 </div>

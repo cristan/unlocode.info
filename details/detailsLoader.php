@@ -59,7 +59,7 @@ class DetailsLoader {
             } else if ($entrySubdivision && $subdivision && $subdivision != $entrySubdivision) {
                 $otherIATA->warning = "Note: this entry is in another ". strtolower($subdivisionName) .". It is not possible for these to actually share an IATA.";
             } else if ($decimalCoordinates && $entryCoordinates) {
-                $entryDecimalCoordinates = $coordinatesConverter->convertCoordinates($entryCoordinates);
+                $entryDecimalCoordinates = $coordinatesConverter->convertToDecimal($entryCoordinates);
                 $distanceMeters = $this->vincentyGreatCircleDistance($decimalCoordinates->latitude, $decimalCoordinates->longitude, $entryDecimalCoordinates->latitude, $entryDecimalCoordinates->longitude);
                 $distanceKm = round($distanceMeters / 1000);
                 if ($distanceKm > 1000) {
@@ -150,7 +150,8 @@ class DetailsLoader {
         $toReturn->decimalCoordinates = null;
         if ($coordinates) {
             $coordinatesConverter = new CoordinatesConverter();
-            $toReturn->decimalCoordinates = $coordinatesConverter->convertCoordinates($coordinates);
+            $toReturn->decimalCoordinates = $coordinatesConverter->convertToDecimal($coordinates);
+            $toReturn->degreesCoordinates = $coordinatesConverter->convertToDegrees($coordinates);
         }
 
         // Functions
