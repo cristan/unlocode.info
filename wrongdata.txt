@@ -30,7 +30,7 @@ https://unlocode.info/SISLV 4610N 14420W should be 4610N 01442E. Or it should ju
 https://unlocode.info/LYKHM Coordinates point to Khoms in Belarus, not in Lybia. There's a Khoms in Lybia at 3239N 01416E, which is most likely meant.
 
 
-atobviac
+AtoBviaC (message written towards AtoBviaC)
 https://unlocode.info/COPBO 1041N 07444W should be 1215N 07158W. Wrong Puerto Bolívar.
 
 Bella Vista in ARBEL You're pointing to Barrio Bella Vista in Santa Fe Argentina, while unlocode points to Bella Vista, Argentina.
@@ -204,6 +204,8 @@ ESQER Don't know which one. Both close enough.
 
 Missing coordinates:
 NLTLB should have 5133N 00505E
+
+*** https://github.com/marek5050/UN-Locode-with-Timezone/ ***
 
 **perfect_allCountries.csv** (noted are the ones where unlococde is wrong):
 https://unlocode.info/USZAV 3846N 10757W should be 3719N 09335W
