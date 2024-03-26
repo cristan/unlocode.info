@@ -1,6 +1,6 @@
 https://unlocode.info/CVBVC: 0250N 06041W should be 1606N 02248W (the original one is pointing to Boa Vista in Brazil instead of Cape Verde)
 
-https://unlocode.info/INKLR: 1380N 07880E should be 1308N 07808E. already sent to the UN.
+https://unlocode.info/INKLR: 1380N 07880E should be 1308N 07808E
 https://unlocode.info/NLDZL 5231N 00656E should be 5320N 00655E
 https://unlocode.info/ROFGA 4951N 02459E point to somewhere in Ukraine. Should be 4551N 02458E. Also, should be Făgăraș instead of just Fagaras.
 https://unlocode.info/CNPUT 2426N 11901E points to inside of a big body of water. Should be 2527N 11900E
@@ -27,6 +27,7 @@ https://unlocode.info/DEFBR 5134N 13013W should be 5248N 01357E
 https://unlocode.info/DEGJ9 4843N 12260W should be 4843N 01226E
 https://unlocode.info/GREFP Coordinates point to the middle of the Atlantic ocean. Efpalio (without N) is at 3826N 02159E
 https://unlocode.info/SISLV 4610N 14420W should be 4610N 01442E. Or it should just be deleted in favor of SILUK.
+https://unlocode.info/LYKHM Coordinates point to Khoms in Belarus, not in Lybia. There's a Khoms in Lybia at 3239N 01416E, which is most likely meant.
 
 
 atobviac
@@ -51,10 +52,6 @@ Munguba, Brazil in BRMGU: That's the unlocode of Mulungu, Brazil which is far aw
 Santana in BRSAN: You meant BRSTN. These are thousands of kilometers away from each other.
 
 Vityaz Marine Terminal in RUVTZ. Your coordinates point to the ocean while the unlocode ones actually point to Vityaz.
-
-// Maybe wrong unlocode?
-https://unlocode.info/SZAGN Location points to Agno in Italy, not Eswatini.
-https://unlocode.info/SZKLB Location points to Kollbrunn in Switzerland
 
 // North South swapped
 https://unlocode.info/CDBNW: Coordinates 0601N 01224E should be 0601S 01224E. North and south are swapped.
@@ -162,47 +159,46 @@ https://unlocode.info/ARSPD 3341S 05910W should be 3146S 06025W Don't see where 
 https://unlocode.info/CNSTI 2359N 11354E should be 2359N 11354E. The original coordinates are in the middle of nowhere, with no water in sight, so no port.
 
 
-False positives:
+False positives when comparing the location with the first hit from Nominatim:
 https://unlocode.info/CNCNA Yes, there's another one in the exact same state further away, but also this one. Nominatum also returns that with the query https://nominatim.openstreetmap.org/search?format=jsonv2&accept-language=en&addressdetails=1&limit=10&city=Changsha&country=CN.
 I would wager UNLOCODE is correct
-
-https://unlocode.info/UAYUZ The Pivdennyi port is super nearby the provided coordinates
-https://unlocode.info/CNYUE There's a Yueqing Town at the provided coordinates, so that's probably good.
-ROBAB Google finds Murfatlar when I'm searching for Basarabi
-https://unlocode.info/DEBIB Maps shows a Biberach in Baden-Württemberg
-https://unlocode.info/CLCHB Maps shows port Chacabuco
-https://unlocode.info/MXECA Maps shows Nuevo León which is a road junction
-MXESC General Escobedo is really close. I believe it.
-https://unlocode.info/CNHNI Hengli village around the corner
-LYKHM Right where Chomsk is
-KHKOS Right outside at the water. Big city. Good enough
-ECLLD 105 km away, but actually very good.
-PHLEY Other Leyte really close
-https://unlocode.info/NOMOL That's fine
-CNSAN Shows Shiwan Town
-PRSJU Shows San Juan
-CLSVE Nominatim shows another one
-CNTAP Google Maps shows this one
-CNYOU 
-CNYUE Shows Yueqing Town. Might still be wrong though.
+https://unlocode.info/UAYUZ The Pivdennyi port is super nearby the provided coordinates. 3rd hit from nominatim.
+https://unlocode.info/CNYUE There's a Yueqing Town at the provided coordinates, so that's probably good. Not returned by Nominatim.
+https://unlocode.info/ROBAB Google finds Murfatlar when I'm searching for Basarabi. Nominatim returns it as the second result.
+https://unlocode.info/DEBIB Maps shows a Biberach in Baden-Württemberg. Second hit in Nominatim.
+https://unlocode.info/CLCHB Maps shows port Chacabuco. Nominatim returns it as the second result.
+https://unlocode.info/MXECA Nominatim first returns a river (?) before returning the correct town.
+https://unlocode.info/KHKOS Right outside at the water. Big city. Good enough
+https://unlocode.info/ECLLD 105 km away, but actually very good.
+https://unlocode.info/PHLEY Second hit in Nominatim
+https://unlocode.info/NOMOL Second hit in Nominatim
+https://unlocode.info/PRSJU Shows San Juan, so it's very likely correct, but Nominatim just doesn't return this location. It doesn't help that there are a lot of San Juans.
+https://unlocode.info/CLSVE Nominatim returns this as the 12th hit, so the location could be right, but no guarentees: it's weird that there's a unlocode for a quarter.
+https://unlocode.info/CNTAP There's a Taipingzhen nearby, so coordinates might be correct.
 UAYUZ Close enough
-CASJF Super false positive: smack in the middle
 CLCRR Super obscure, but seems right
 CNZZU Close enough, but still wrong. Should point to the harbor.
-ARLPS The other las palmas
-CNCQI Shows a Chongqing
-BEHAW At least 1 Ham around.
+https://unlocode.info/ARLPS The other las palmas. Second hit in Nominatim
+https://unlocode.info/CNCQI Shows a Chongqing. Second hit in Nominatim.
+https://unlocode.info/BEHAW The coordinates point to Ham-sur-Heure (which is probably fine, hard to tell with the pretty useless WAL region), but nominatim just doesn't return that.
+CNXNA Google Maps shows a tiny, tiny little thing, but at this location.
+https://unlocode.info/CNPGZ Nominatim finds a completely different place, but Google maps says it's at the provided coordinates.
+
+// Maybe wrong unlocode?
+https://unlocode.info/SZAGN Location points to Agno in Italy, not Eswatini.
+https://unlocode.info/SZKLB Location points to Kollbrunn in Switzerland
 
 I don't know
+https://unlocode.info/GERTV (Rust'Avi) and https://unlocode.info/GEZAK (Rustavi) both have the same coordinates and the same region. There quite a few others with duplicate coordinates.
+
 https://unlocode.info/CNHEB Points to the middle of nowhere in China (nothing there), but Nominatim also points to a very small thingie.
 CNHUG I can't seem to find a Huanggang in Guangdong Sheng.
 VNDNA Yeah, whatever. It seems to be a name of a region, not a city.
-CNPGZ Neither nominatim or google maps seems to find it.
+
 VNPHG ??
-CNXNA It's probably wrong, but nominatim can't find a good alternative, and Google Maps shows a tiny, tiny little thing.
 CNXSN don't know enough Chinese
 CNYTN Who knows?
-CNJSI Probably wrong. Don't really care.
+CNJSI Probably wrong.
 IDPER Almost certainly wrong. I don't see a port though.
 ESQER Don't know which one. Both close enough.
 
