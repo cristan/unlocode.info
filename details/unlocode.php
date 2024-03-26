@@ -132,11 +132,15 @@ if ($coordinates) {
 </div>
 </div>
 <div class="footer">
-From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a><?php
+From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a>
+<?php
 if ($details->status) {
     echo " | $details->status";
 }
-?> | Entry last entered/updated: <?=$details->month?>-<?=$details->year?><br/>
+if ($details->lastEnteredUpdated) {
+    echo " | Entry last entered/updated: ".$details->lastEnteredUpdated->month."-".$details->lastEnteredUpdated->year ."<br/>";
+}
+?>
 </div>
 </main>
   </body>

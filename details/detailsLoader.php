@@ -188,15 +188,24 @@ class DetailsLoader {
 
         // Date
         $date = $locationFromDb['date'];
-        $year = substr($date, 0, 2);
-        $toReturn->month = substr($date, 2, 2);
-        // The oldest unlocode in the database is from 1980.
-        if ($year >= 80) {
-            $year = "19$year";
+        if ($date == "") {
+            $toReturn->lastEnteredUpdated = null;
         } else {
-            $year = "20$year";
+            $lastEnteredUpdated = new stdClass();
+            $lastEnteredUpdated->month = substr($date, 2, 2);
+            
+            $year = substr($date, 0, 2);
+            // The oldest unlocode in the database is from 1980.
+            if ($year >= 80) {
+                $year = "19$year";
+            } else {
+                $year = "20$year";
+            }
+            $lastEnteredUpdated->year = $year;
+
+            $toReturn->lastEnteredUpdated = $lastEnteredUpdated;
         }
-        $toReturn->year = $year;
+        
 
         return $toReturn;
     }
