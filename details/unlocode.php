@@ -117,15 +117,15 @@ if ($coordinates) {
 <div style="flex: 3;">
 <?php
 if ($coordinates) {
-    //echo '<iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=12&center='. urlencode($details->decimalCoordinates->latitude .",". $details->decimalCoordinates->longitude) .'&key=AIzaSyDQvt-CZgnIcXjMw2boq46oaAKAjDjbNIM"></iframe>';
-    echo "<div id='leafletMap'></div>";
-    echo "<script>var map = L.map('leafletMap').setView([".$details->decimalCoordinates->latitude.", ". $details->decimalCoordinates->longitude ."], 13);
-    const urlTemplate = window.devicePixelRatio > 1 ? 'https://tile.osmand.net/hd//{z}/{x}/{y}.png' : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
-    L.tileLayer(urlTemplate, {
-        maxZoom: 19,
-        attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>'
-    }).addTo(map);
-    </script>";
+    echo '<iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=12&center='. urlencode($details->decimalCoordinates->latitude .",". $details->decimalCoordinates->longitude) .'&key=AIzaSyDQvt-CZgnIcXjMw2boq46oaAKAjDjbNIM"></iframe>';
+    // echo "<div id='leafletMap'></div>";
+    // echo "<script>var map = L.map('leafletMap').setView([".$details->decimalCoordinates->latitude.", ". $details->decimalCoordinates->longitude ."], 13);
+    // const urlTemplate = window.devicePixelRatio > 1 ? 'https://tile.osmand.net/hd//{z}/{x}/{y}.png' : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+    // L.tileLayer(urlTemplate, {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>'
+    // }).addTo(map);
+    // </script>";
 }
 ?>
 </div>
