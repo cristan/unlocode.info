@@ -11,6 +11,12 @@ $homeLoc = $homeUrl->addChild('loc', "https://www.unlocode.info");
 $homeUrl->addChild('lastmod', $homeLastMod);
 $homeUrl->addChild('priority', "1.0");
 
+// About
+$aboutUrl = $xml->addChild('url');
+$aboutLoc = $aboutUrl->addChild('loc', "https://www.unlocode.info/about");
+$aboutLoc->addChild('lastmod', $homeLastMod);
+$aboutLoc->addChild('priority', "1.0");
+
 // Countries
 foreach($countries as $countryCode => $countryName) {
     $countryUrl = $xml->addChild('url');

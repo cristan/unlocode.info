@@ -42,7 +42,7 @@ foreach($countries as $countryCode => $countryName) {
 </div>
   </div>
   <div class="footer">
-  From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a>
+  From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a> | <a href="about">About us</a>
   </div>
 </main>
 </body>

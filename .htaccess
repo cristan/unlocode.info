@@ -1,0 +1,16 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.unlocode\.info [NC]
+RewriteRule ^(.*)$ https://unlocode.info/$1 [L,R=301]
+
+RewriteRule ^$ home/index.php [L,QSA]
+RewriteRule ^sitemapindex\.xml home/sitemapindex.php [L,QSA]
+RewriteRule ^sitemap1\.xml home/sitemap1.php [L,QSA]
+RewriteRule ^sitemap\d+\.xml home/sitemap_unlocode.php [L,QSA]
+RewriteRule ^about about/about.html [L,QSA]
+RewriteRule ^([A-Za-z]{2}[A-Za-z0-9]{3})$ details/unlocode.php?unlocode=$1 [L,QSA]
+RewriteRule ^country/([A-Z]{2})$ country/country.php?countryCode=$1 [L,QSA]
