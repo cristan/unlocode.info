@@ -1,9 +1,9 @@
 <?php
 
 // lastmod format is YYYY-MM-DD
-$homeLastMod = "2024-02-18";
-$countryLastMod = "2024-02-22";
-$unlocodeLastMod = "2024-03-25";
+$homeLastMod = "2024-06-27";
+$countryLastMod = "2024-06-27";
+$unlocodeLastMod = "2024-06-27";
 
 $numResultsPerSitemap = 1000;
 ?>
