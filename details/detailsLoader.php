@@ -118,7 +118,7 @@ class DetailsLoader {
         $toReturn = new stdClass();
         $unlocode = $country . $location;
         if ($subdivision) {
-            $toReturn->title = "$unlocode: $name - $subdivision - $countryName";
+            $toReturn->title = "$unlocode: $name - $subdivision - $countryName | UN/LOCODE info";
             $toReturn->header = "<a href='/country/$country'>$country</a>$location: $name - $subdivision";
         } else {
             $toReturn->title = "$unlocode: $name - $countryName";

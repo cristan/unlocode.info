@@ -24,7 +24,7 @@ $countryName = $countries[$countryCode]
 <html>
   <head>  
     <meta content="width=device-width, initial-scale=1" name="viewport" />	
-    <title><?=$countryName?></title>
+    <title><?=$countryName?> | UN/LOCODE info</title>
     <meta name="description" content="Explore UNLOCODEs for <?=$countryName?>. Find codes for ports, rail terminals, road terminals, airports, and more."/>
     <link rel="icon" href="../favicon.svg">
     <link rel="stylesheet" href="../flat-remix.min.css">
