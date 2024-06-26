@@ -28,6 +28,8 @@ https://unlocode.info/DEGJ9 4843N 12260W should be 4843N 01226E
 https://unlocode.info/GREFP Coordinates point to the middle of the Atlantic ocean. Efpalio (without N) is at 3826N 02159E
 https://unlocode.info/SISLV 4610N 14420W should be 4610N 01442E. Or it should just be deleted in favor of SILUK.
 https://unlocode.info/LYKHM Coordinates point to Khoms in Belarus, not in Lybia. There's a Khoms in Lybia at 3239N 01416E, which is most likely meant.
+https://unlocode.info/UAMIR Mironovka Coordinates are invalid. 4829N 38150E should be 4829N 03815E (typo)
+
 
 
 AtoBviaC (message written towards AtoBviaC)

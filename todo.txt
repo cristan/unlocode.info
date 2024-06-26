@@ -1,9 +1,10 @@
 Detail scherm
-* Dubbele entries in de region (is er maar 1: MA, KES)
+SEO: About us pagina (die uitlegt waar de data vandaan komt)
+Betere performance middels NoSQL?
+Money!: 2 ads op detail scherm
 
+Meh
 State alleen achter de plaatsnaam zetten in product detail staan als de naam niet uniek is in de detail pagina?
-
-NLHAG: 5205N 00418E tonen als 52° 05' N, 004° 18' E (zodat je het oa in maps kan plakken)
 
 Extra data sources:
 * AtoBviaC https://atobviac.com/ReleaseInformation/PortsList
@@ -35,6 +36,8 @@ Home screen
 
 Land Detail
 * Overzicht unlocodes
+NLHAG: 5205N 00418E tonen als 52° 05' N, 004° 18' E (zodat je het oa in maps kan plakken)
+
 
 Pretty maken
 * CSS maken
