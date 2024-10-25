@@ -2,9 +2,24 @@
 
 class CoordinatesConverter {
     private $coordinatesRegex = '/^(\d{2})(\d{2})([NS])\s+(\d{3})(\d{2})([EW])$/';
+    private $decimalRegex = '/^(\d+\.\d+)([NS])\s(\d+\.\d+)([EW])$/';
 
     public function convertToDecimal($input) {
-        // Extract latitude and longitude parts
+        preg_match($this->decimalRegex, $input, $decimalMatches);
+        if ($decimalMatches) {
+            $lat = $decimalMatches[1];
+            $latDirection = $decimalMatches[2];
+            $lon = $decimalMatches[3];
+            $lonDirection = $decimalMatches[4];
+            $decimalLat = ($latDirection === 'S' ? "-" : "") . $lat;
+            $decimalLon = ($lonDirection === 'W' ? "-" : "") . $lon;
+
+            $coordinates = new stdClass();
+            $coordinates->latitude = $decimalLat;
+            $coordinates->longitude = $decimalLon;
+            return $coordinates;
+        }
+
         preg_match($this->coordinatesRegex, $input, $matches);
     
         // Check if the input format is valid
@@ -32,6 +47,32 @@ class CoordinatesConverter {
     }
 
     public function convertToDegrees($input) {
+        preg_match($this->decimalRegex, $input, $decimalMatches);
+        if ($decimalMatches) {
+            $lat = $decimalMatches[1];
+            $latDirection = $decimalMatches[2];
+            $lon = $decimalMatches[3];
+            $lonDirection = $decimalMatches[4];
+
+            // Convert decimal coordinates to degrees and minutes
+            $latDegrees = floor($lat);
+            $latMinutes = ($lat - $latDegrees) * 60;
+            $lonDegrees = floor($lon);
+            $lonMinutes = ($lon - $lonDegrees) * 60;
+
+            // Format the degrees and minutes with leading zeros
+            $latDegrees = sprintf("%02d", $latDegrees);
+            $latMinutes = sprintf("%02d", round($latMinutes));
+            $lonDegrees = sprintf("%03d", $lonDegrees);
+            $lonMinutes = sprintf("%02d", round($lonMinutes));
+
+            // Construct the formatted coordinates object
+            $coordinates = new stdClass();
+            $coordinates->latitude = $latDegrees . '°' . $latMinutes . "'" . $latDirection;
+            $coordinates->longitude = $lonDegrees . '°' . $lonMinutes . "'" . $lonDirection;
+            return $coordinates;
+        }
+
         preg_match($this->coordinatesRegex, $input, $matches);
     
         // Check if the input format is valid
