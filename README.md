@@ -33,4 +33,4 @@ function setupDb() {
 ?>
 ```
 
-Also, the database needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs.
+Also, the database needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs. I've added indices to country, location, subdivision and IATA.
