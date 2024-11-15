@@ -1,4 +1,6 @@
-# About #
+# unlocode.info #
+
+[![Uptime Robot status](https://img.shields.io/uptimerobot/status/m798005161-86a84a64d960f891f0134601)](https://dashboard.uptimerobot.com/monitors/798005161)
 
 This is the source code of the website [unlocode.info](https://unlocode.info/). It is a very convenient way to view all the info of a specific UN/LOCODE.
 
