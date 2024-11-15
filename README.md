@@ -1,29 +1,34 @@
-# README #
+# About #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is the source code of the website [unlocode.info](https://unlocode.info/). It is a very convenient way to view all the info of a specific UN/LOCODE.
 
-### What is this repository for? ###
+### Why make this open source? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+I don't expect anyone to use this code to use a 1-1 copy of [unlocode.info](https://unlocode.info/) using this repo, so why make this open source? 2 reasons:
 
-### How do I get set up? ###
+1. I hope to get PR's. PHP isn't my strong suit. So any PR to improve the code is welcome!
+2. For posterity. If I ever stop hosting this site for whatever reason, somebody else can snatch up the domain and keep on hosting this site.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Hosting the site ###
 
-### Contribution guidelines ###
+You unfortunately can't run this out of the box. First of all: the database.php is added to .gitignore because that contains credentials. It looks like this:
 
-* Writing tests
-* Code review
-* Other guidelines
+```
+<?php
+function setupDb() {
+    $host='localhost';
+    $user='my_database_user';
+    $password='my_password';
+    $database='my_database';
 
-### Who do I talk to? ###
+    // Show errors when there's something wrong with what we're doing to MySQL
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    
+    $connection = $mysqli = new mysqli($host, $user, $password, $database);
+    $connection->set_charset("utf8");
+    return $connection;
+}
+?>
+```
 
-* Repo owner or admin
-* Other community or team contact
+Also, the database needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs.
