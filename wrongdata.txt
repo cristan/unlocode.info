@@ -97,7 +97,6 @@ https://unlocode.info/ZASTN Coordinates 2543N 02817E should be 2543S 02817E. Nor
 
 // East west swapped
 https://unlocode.info/ATDRA 4845N 01639W should be 4845N 01639E
-https://unlocode.info/BDMUN 2333N 09032W should be 2333N 09032E
 https://unlocode.info/CABAC 5350N 11325E should be 5350N 11325W
 https://unlocode.info/CAEDB 5247N 11247E should be 5247N 11247W
 https://unlocode.info/CAFOM 4929N 11126E should be 4929N 11126W
