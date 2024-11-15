@@ -13,23 +13,15 @@ I don't expect anyone to use this code to use a 1:1 copy of [unlocode.info](http
 
 ### Hosting the site ###
 
-You unfortunately can't run this out of the box. First of all: the database.php is added to .gitignore because that contains credentials. It looks like this:
+You unfortunately can't run this out of the box. First of all: you need to create a secrets.php. It looks like this:
 
 ```
 <?php
-function setupDb() {
-    $host='localhost';
-    $user='my_database_user';
-    $password='my_password';
-    $database='my_database';
-
-    // Show errors when there's something wrong with what we're doing to MySQL
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    
-    $connection = $mysqli = new mysqli($host, $user, $password, $database);
-    $connection->set_charset("utf8");
-    return $connection;
-}
+$db_host='localhost';
+$db_user='my_database_user';
+$db_password='my_database_password';
+$db_database='my_database';
+$maps_key='my_maps_key';
 ?>
 ```
 
