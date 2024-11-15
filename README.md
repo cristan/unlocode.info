@@ -8,7 +8,7 @@ This is the source code of the website [unlocode.info](https://unlocode.info/). 
 
 I don't expect anyone to use this code to use a 1:1 copy of [unlocode.info](https://unlocode.info/) using this repo, so why make this open source? 2 reasons:
 
-1. I hope to get PR's. PHP isn't my strong suit. So any PR to improve the code is welcome!
+1. I hope to get PR's. PHP isn't my strong suit. So any PR to improve the code is welcome.
 2. For posterity. If I ever stop hosting this site for whatever reason, somebody else can snatch up the domain and keep on hosting this site.
 
 ### Hosting the site ###
