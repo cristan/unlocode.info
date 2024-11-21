@@ -31,18 +31,18 @@ To view a code, go to unlocode.info/<strong>XXXXX</strong> or use enter it here:
 <h1>Countries</h1>
 <div class="countriesContainer">
 <?php
-include('../include.php');
-include('../countryList.php');
+include '../include.php';
+include '../countryList.php';
 
 asort($countries);
-foreach($countries as $countryCode => $countryName) {
-    echo "<a href='https://unlocode.info/country/$countryCode'>$countryName</a><br/>\n";
+foreach ($countries as $countryCode => $countryName) {
+    echo "<a href='https://unlocode.info/country/{$countryCode}'>{$countryName}</a><br/>\n";
 }
 ?>
 </div>
   </div>
   <div class="footer">
-  From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a> | <a href="about">About us</a>
+  From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?= $unlocodeVersion?></a> | <a href="about">About us</a>
   </div>
 </main>
 </body>

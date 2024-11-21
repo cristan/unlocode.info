@@ -1,31 +1,34 @@
 <?php
 
-include('../include.php');
+include '../include.php';
 
 // Function to read CSV file and return data as array
-function readCSV($file, $skipFirstLine) {
+function readCSV($file, $skipFirstLine)
+{
     $data = [];
-    if (($handle = fopen($file, "r")) !== FALSE) {
+    if (($handle = fopen($file, 'r')) !== false) {
         if ($skipFirstLine) {
             fgetcsv($handle);
         }
-        
-        while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
+
+        while (($row = fgetcsv($handle, 1000, ',')) !== false) {
             $data[] = $row;
         }
         fclose($handle);
     }
+
     return $data;
 }
 
 // Function to write data to CSV file
-function writeCSV($file, $data) {
+function writeCSV($file, $data)
+{
     $handle = fopen($file, 'w');
     foreach ($data as $row) {
-        $quoted_row = array_map(function($item) {
-            return '"' . str_replace('"', '""', $item) . '"';
+        $quoted_row = array_map(function ($item) {
+            return '"'.str_replace('"', '""', $item).'"';
         }, $row);
-        fwrite($handle, implode(',', $quoted_row) . "\n");
+        fwrite($handle, implode(',', $quoted_row)."\n");
     }
     fclose($handle);
 }
@@ -51,4 +54,3 @@ foreach ($subdivision_codes as &$row) {
 writeCSV('subdivision-codes-combined.csv', $subdivision_codes);
 
 echo "Subdivision types added successfully!\n<br/>The result: <a href='subdivision-codes-combined.csv'>subdivision-codes-combined.csv</a>";
-?>
