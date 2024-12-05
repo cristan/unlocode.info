@@ -13,7 +13,7 @@ I don't expect anyone to use this code to use a 1:1 copy of [unlocode.info](http
 
 ### Hosting the site ###
 
-It tates a little bit of effort to host this site. First of all: you need to create a secrets.php. It looks like this:
+It takes a little bit of effort to host this site. First of all: you need to create a secrets.php. It looks like this:
 
 ```
 <?php
