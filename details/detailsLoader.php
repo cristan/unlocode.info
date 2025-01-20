@@ -9,34 +9,6 @@ include 'remarksConverter.php';
 
 class DetailsLoader
 {
-    /**
-     * Calculates the great-circle distance between two points, with
-     * the Vincenty formula.
-     *
-     * @param float $latitudeFrom Latitude of start point in [deg decimal]
-     * @param float $longitudeFrom Longitude of start point in [deg decimal]
-     * @param float $latitudeTo Latitude of target point in [deg decimal]
-     * @param float $longitudeTo Longitude of target point in [deg decimal]
-     * @param float $earthRadius Mean earth radius in [m]
-     * @return float Distance between points in [m] (same as earthRadius)
-     */
-    public static function vincentyGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
-    {
-        // convert from degrees to radians
-        $latFrom = deg2rad($latitudeFrom);
-        $lonFrom = deg2rad($longitudeFrom);
-        $latTo = deg2rad($latitudeTo);
-        $lonTo = deg2rad($longitudeTo);
-
-        $lonDelta = $lonTo - $lonFrom;
-        $a = pow(cos($latTo) * sin($lonDelta), 2) +
-        pow(cos($latFrom) * sin($latTo) - sin($latFrom) * cos($latTo) * cos($lonDelta), 2);
-        $b = sin($latFrom) * sin($latTo) + cos($latFrom) * cos($latTo) * cos($lonDelta);
-
-        $angle = atan2(sqrt($a), $b);
-
-        return $angle * $earthRadius;
-    }
 
     public function loadDetails($unlocode)
     {
@@ -44,7 +16,7 @@ class DetailsLoader
         $location = substr($unlocode, 2, 3);
         $connection = setupDb();
         $locationFromDb = $this->loadLocation($country, $location, $connection);
-        if (! $locationFromDb) {
+        if (!$locationFromDb) {
             return null;
         }
 
@@ -60,7 +32,7 @@ class DetailsLoader
         $result = $stmt->get_result();
         $location = $result->fetch_assoc();
 
-        if (! $location) {
+        if (!$location) {
             return $location;
         }
 
@@ -96,14 +68,14 @@ class DetailsLoader
             $otherIATA = new stdClass();
 
             $countryCode = $dbEntry['country'];
-            $otherIATA->unlocode = $countryCode.$dbEntry['location'];
+            $otherIATA->unlocode = $countryCode . $dbEntry['location'];
             $entryCoordinates = $dbEntry['coordinates'];
             $otherIATA->warning = null;
             $entrySubdivision = $dbEntry['subdivision'];
             if ($countryCode != $country) {
                 $otherIATA->warning = 'Note: this entry is in another country. It is not possible for these to actually share an IATA.';
             } elseif ($entrySubdivision && $subdivision && $subdivision != $entrySubdivision) {
-                $otherIATA->warning = 'Note: this entry is in another '.strtolower($subdivisionName).'. It is not possible for these to actually share an IATA.';
+                $otherIATA->warning = 'Note: this entry is in another ' . strtolower($subdivisionName) . '. It is not possible for these to actually share an IATA.';
             } elseif ($decimalCoordinates && $entryCoordinates) {
                 $entryDecimalCoordinates = $coordinatesConverter->convertToDecimal($entryCoordinates);
                 $distanceMeters = $this->vincentyGreatCircleDistance($decimalCoordinates->latitude, $decimalCoordinates->longitude, $entryDecimalCoordinates->latitude, $entryDecimalCoordinates->longitude);
@@ -130,6 +102,35 @@ class DetailsLoader
         return $region;
     }
 
+    /**
+     * Calculates the great-circle distance between two points, with
+     * the Vincenty formula.
+     *
+     * @param float $latitudeFrom Latitude of start point in [deg decimal]
+     * @param float $longitudeFrom Longitude of start point in [deg decimal]
+     * @param float $latitudeTo Latitude of target point in [deg decimal]
+     * @param float $longitudeTo Longitude of target point in [deg decimal]
+     * @param float $earthRadius Mean earth radius in [m]
+     * @return float Distance between points in [m] (same as earthRadius)
+     */
+    public static function vincentyGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+    {
+        // convert from degrees to radians
+        $latFrom = deg2rad($latitudeFrom);
+        $lonFrom = deg2rad($longitudeFrom);
+        $latTo = deg2rad($latitudeTo);
+        $lonTo = deg2rad($longitudeTo);
+
+        $lonDelta = $lonTo - $lonFrom;
+        $a = pow(cos($latTo) * sin($lonDelta), 2) +
+            pow(cos($latFrom) * sin($latTo) - sin($latFrom) * cos($latTo) * cos($lonDelta), 2);
+        $b = sin($latFrom) * sin($latTo) + cos($latFrom) * cos($latTo) * cos($lonDelta);
+
+        $angle = atan2(sqrt($a), $b);
+
+        return $angle * $earthRadius;
+    }
+
     private function enrich($country, $location, $connection, $locationFromDb)
     {
         $name = $locationFromDb['name'];
@@ -139,7 +140,7 @@ class DetailsLoader
         $countryName = $countries[$country] ?? $country;
 
         $toReturn = new stdClass();
-        $unlocode = $country.$location;
+        $unlocode = $country . $location;
         if ($subdivision) {
             $toReturn->title = "{$unlocode}: {$name} - {$subdivision} - {$countryName} | UN/LOCODE info";
             $toReturn->header = "<a href='/country/{$country}'>{$country}</a>{$location}: {$name} - {$subdivision}";
@@ -165,7 +166,7 @@ class DetailsLoader
             $toReturn->regionType = $region['type'] ?? 'Region';
             $toReturn->regionName = $region['name'] ?? null;
         }
-        $toReturn->description = "Details for UNLOCODE {$unlocode}: {$name} in ".($toReturn->regionName ?? $subdivision).", {$toReturn->country}. Discover functions, coordinates and more.";
+        $toReturn->description = "Details for UNLOCODE {$unlocode}: {$name} in " . ($toReturn->regionName ?? $subdivision) . ", {$toReturn->country}. Discover functions, coordinates and more.";
 
         // Coordinates
         $coordinates = $locationFromDb['coordinates'];
@@ -189,7 +190,7 @@ class DetailsLoader
             $toReturn->functions = $functionCodeConverter->convertFunctionCodesToArray($function);
 
             // Whenever an entry has the airport function, the IATA is the location part of the unlocode (unless there's a data error or the airport has no IATA)
-            if (! $iataOverride && $functionCodeConverter->hasAirportFunction($function)) {
+            if (!$iataOverride && $functionCodeConverter->hasAirportFunction($function)) {
                 $toReturn->possibleIATA = $location;
             }
         }
