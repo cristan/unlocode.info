@@ -7,6 +7,10 @@
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="flat-remix.min.css">
     <link rel="stylesheet" href="unlocode.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+    />
     <script>
       function redirect() {
           var inputValue = document.getElementById('unlocodeField').value.trim();
@@ -36,7 +40,7 @@ include '../countryList.php';
 
 asort($countries);
 foreach ($countries as $countryCode => $countryName) {
-    echo "<a href='https://unlocode.info/country/{$countryCode}'>{$countryName}</a><br/>\n";
+    echo "<a href='https://unlocode.info/country/{$countryCode}'><span class='fi fi-".strtolower($countryCode)."'></span> {$countryName}</a><br/>\n";
 }
 ?>
 </div>
