@@ -9,14 +9,13 @@ include 'remarksConverter.php';
 
 class DetailsLoader
 {
-
     public function loadDetails($unlocode)
     {
         $country = substr($unlocode, 0, 2);
         $location = substr($unlocode, 2, 3);
         $connection = setupDb();
         $locationFromDb = $this->loadLocation($country, $location, $connection);
-        if (!$locationFromDb) {
+        if (! $locationFromDb) {
             return null;
         }
 
@@ -32,7 +31,7 @@ class DetailsLoader
         $result = $stmt->get_result();
         $location = $result->fetch_assoc();
 
-        if (!$location) {
+        if (! $location) {
             return $location;
         }
 
@@ -68,14 +67,14 @@ class DetailsLoader
             $otherIATA = new stdClass();
 
             $countryCode = $dbEntry['country'];
-            $otherIATA->unlocode = $countryCode . $dbEntry['location'];
+            $otherIATA->unlocode = $countryCode.$dbEntry['location'];
             $entryCoordinates = $dbEntry['coordinates'];
             $otherIATA->warning = null;
             $entrySubdivision = $dbEntry['subdivision'];
             if ($countryCode != $country) {
                 $otherIATA->warning = 'Note: this entry is in another country. It is not possible for these to actually share an IATA.';
             } elseif ($entrySubdivision && $subdivision && $subdivision != $entrySubdivision) {
-                $otherIATA->warning = 'Note: this entry is in another ' . strtolower($subdivisionName) . '. It is not possible for these to actually share an IATA.';
+                $otherIATA->warning = 'Note: this entry is in another '.strtolower($subdivisionName).'. It is not possible for these to actually share an IATA.';
             } elseif ($decimalCoordinates && $entryCoordinates) {
                 $entryDecimalCoordinates = $coordinatesConverter->convertToDecimal($entryCoordinates);
                 $distanceMeters = $this->vincentyGreatCircleDistance($decimalCoordinates->latitude, $decimalCoordinates->longitude, $entryDecimalCoordinates->latitude, $entryDecimalCoordinates->longitude);
@@ -140,7 +139,7 @@ class DetailsLoader
         $countryName = $countries[$country] ?? $country;
 
         $toReturn = new stdClass();
-        $unlocode = $country . $location;
+        $unlocode = $country.$location;
         if ($subdivision) {
             $toReturn->title = "{$unlocode}: {$name} - {$subdivision} - {$countryName} | UN/LOCODE info";
             $toReturn->header = "<a href='/country/{$country}'>{$country}</a>{$location}: {$name} - {$subdivision}";
@@ -166,7 +165,7 @@ class DetailsLoader
             $toReturn->regionType = $region['type'] ?? 'Region';
             $toReturn->regionName = $region['name'] ?? null;
         }
-        $toReturn->description = "Details for UNLOCODE {$unlocode}: {$name} in " . ($toReturn->regionName ?? $subdivision) . ", {$toReturn->country}. Discover functions, coordinates and more.";
+        $toReturn->description = "Details for UNLOCODE {$unlocode}: {$name} in ".($toReturn->regionName ?? $subdivision).", {$toReturn->country}. Discover functions, coordinates and more.";
 
         // Coordinates
         $coordinates = $locationFromDb['coordinates'];
@@ -190,7 +189,7 @@ class DetailsLoader
             $toReturn->functions = $functionCodeConverter->convertFunctionCodesToArray($function);
 
             // Whenever an entry has the airport function, the IATA is the location part of the unlocode (unless there's a data error or the airport has no IATA)
-            if (!$iataOverride && $functionCodeConverter->hasAirportFunction($function)) {
+            if (! $iataOverride && $functionCodeConverter->hasAirportFunction($function)) {
                 $toReturn->possibleIATA = $location;
             }
         }

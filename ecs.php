@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
@@ -26,7 +27,11 @@ return ECSConfig::configure()
         SetList::NAMESPACES,
         SetList::COMMENTS,
         SetList::PSR_12,
-        SetList::CLEAN_CODE,
+        //SetList::CLEAN_CODE,
         SetList::CONTROL_STRUCTURES,
         SetList::LARAVEL,
+    ])
+    ->withSkip([
+        // skip single rule
+        OrderedClassElementsFixer::class,
     ]);

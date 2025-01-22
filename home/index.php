@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>  
-    <meta content="width=device-width, initial-scale=1" name="viewport" />	
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Unlocode.info | Info about every UN/LOCODE</title>
     <meta name="description" content="All the UN/LOCODEs, five-character codes for every location used in international trade."/>
     <link rel="icon" href="favicon.svg">
@@ -20,7 +20,7 @@
     <h1>UN/LOCODE</h1>
 UN/LOCODEs are five-character codes to uniquely identify geographic places which are in any way related to international trade.<br/>
 <br/>
-To view a code, go to unlocode.info/<strong>XXXXX</strong> or use enter it here:<br/>
+To view a code, go to unlocode.info/<strong>XXXXX</strong> or enter it here:<br/>
 
 <form onsubmit="redirect(); return false;" style="margin-top:8px;">
     <label for="unlocodeField">UN/LOCODE</label> <input id="unlocodeField" type="text" placeholder="XXXXX" maxlength="5" minlength="5" required>
