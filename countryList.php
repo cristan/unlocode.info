@@ -1,6 +1,6 @@
 <?php
 
-$countries = array(
+$countries = [
     'AD' => 'Andorra',
     'AE' => 'United Arab Emirates (the)',
     'AF' => 'Afghanistan',
@@ -250,7 +250,4 @@ $countries = array(
     'MF' => 'Saint Martin (French Part)',
     'SX' => 'Sint Maarten (Dutch Part)',
     'SS' => 'South Sudan',
-);
-
-
-?>
+];

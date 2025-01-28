@@ -1,20 +1,22 @@
 <?php
 
-class RemarksConverter {
-    private $changeMap = array(
-        '@Coo' => "Coordinates changed or added",
-        '@Fun' => "Functions changed",
-        '@Sta' => "Status changed",
-        '@Sub' => "Subdivision code added or changed",
-        '@Nam' => "Location name changed",
-        '@Spe' => "Spelling of name corrected",
-    );
+class RemarksConverter
+{
+    private $changeMap = [
+        '@Coo' => 'Coordinates changed or added',
+        '@Fun' => 'Functions changed',
+        '@Sta' => 'Status changed',
+        '@Sub' => 'Subdivision code added or changed',
+        '@Nam' => 'Location name changed',
+        '@Spe' => 'Spelling of name corrected',
+    ];
 
-    public function convertRemarks($remarks) {
+    public function convertRemarks($remarks)
+    {
         $result = $remarks;
 
         foreach ($this->changeMap as $key => $value) {
-            $result = str_replace($key, "<abbr title='$value'>$key</abbr>", $result);
+            $result = str_replace($key, "<abbr title='{$value}'>{$key}</abbr>", $result);
         }
 
         // cf US BIO, US ENC, US JOY
@@ -42,4 +44,3 @@ class RemarksConverter {
         return $result;
     }
 }
-?>

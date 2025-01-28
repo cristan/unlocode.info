@@ -1,21 +1,21 @@
-<?php    
-include('../secrets.php');
-include('../include.php');
-include('detailsLoader.php');
+<?php
+include '../secrets.php';
+include '../include.php';
+include 'detailsLoader.php';
 
-$unlocode = $_GET["unlocode"];
+$unlocode = $_GET['unlocode'];
 // Redirect permanently to uppercase variant of provided URL when not uppercase
-if($unlocode != strtoupper($unlocode)) {
-    header("Location: /".strtoupper($unlocode), true, 301);
+if ($unlocode != strtoupper($unlocode)) {
+    header('Location: /'.strtoupper($unlocode), true, 301);
     exit;
 }
 
 $detailsLoader = new DetailsLoader();
 $details = $detailsLoader->loadDetails($unlocode);
-if (!$details) {
+if (! $details) {
     http_response_code(404);
-    include('../404.shtml');
-    die();
+    include '../404.shtml';
+    exit();
 }
 
 ?>
@@ -23,8 +23,8 @@ if (!$details) {
 <html>
   <head>  
     <meta content="width=device-width, initial-scale=1" name="viewport" />	
-    <title><?=$details->title?></title>
-    <meta name="description" content="<?=$details->description?>"/>
+    <title><?= $details->title?></title>
+    <meta name="description" content="<?= $details->description?>"/>
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="flat-remix.min.css">
     <link rel="stylesheet" href="unlocode.css">
@@ -40,18 +40,17 @@ if (!$details) {
 
   <main>
     <div class="paper">
-    <h1><?=$details->header?></h1>
+    <h1><?= $details->header?></h1>
     <div class="divsContainer">
         <div style="flex: 2;">
   <?php
-  
-foreach($details->names as $index=>$name) {
+
+foreach ($details->names as $index => $name) {
     if ($index != 0) {
         echo "or<br/>\n";
     }
-    echo "Name: ". $name . "<br/>\n";
+    echo 'Name: '.$name."<br/>\n";
 }
-
 
 if ($details->entryToBeRemoved) {
     echo "<span style='color:#d41919'>Entry to be removed in the next issue</span><br/>\n";
@@ -60,20 +59,22 @@ if ($details->entryToBeRemoved) {
 $subdivision = $details->subdivision;
 if ($subdivision) {
     if ($details->regionName) {
-        echo "$details->regionType: $details->regionName ($subdivision)<br/>\n";
+        echo "{$details->regionType}: {$details->regionName} ({$subdivision})<br/>\n";
     } else {
-        echo "$details->regionType: $subdivision<br/>\n";
+        echo "{$details->regionType}: {$subdivision}<br/>\n";
     }
 }
-echo "Country: $details->country<br/>\n<br/>\n";
+echo "Country: {$details->country}<br/>\n<br/>\n";
 
-function array2ul($array) {
-    $out = "<ul>";
-    foreach($array as $key => $elem){
-        $out .= "<li>$elem</li>";
+function array2ul($array)
+{
+    $out = '<ul>';
+    foreach ($array as $key => $elem) {
+        $out .= "<li>{$elem}</li>";
     }
     $out .= "</ul>\n";
-    return $out; 
+
+    return $out;
 }
 
 $functions = $details->functions;
@@ -84,22 +85,22 @@ if ($functions) {
 
 $iata = $details->IATA;
 if ($iata) {
-    echo "<p>IATA: $iata</p>\n";
+    echo "<p>IATA: {$iata}</p>\n";
 }
 $possibleIATA = $details->possibleIATA;
 if ($possibleIATA) {
-    echo "<p>Possible IATA<span class='tooltip'>?<span class='tooltiptext'>The location has an airport and no explicitly defined IATA. That means either means that the IATA is $possibleIATA, or the airport doesn't have an IATA.</span></span>: $possibleIATA</p>\n";
+    echo "<p>Possible IATA<span class='tooltip'>?<span class='tooltiptext'>The location has an airport and no explicitly defined IATA. That means either means that the IATA is {$possibleIATA}, or the airport doesn't have an IATA.</span></span>: {$possibleIATA}</p>\n";
 }
 $otherLocationsWithSameIata = $details->otherLocationsWithSameIata;
 if ($otherLocationsWithSameIata) {
-    echo "<div>Other ". (count($otherLocationsWithSameIata) == 1 ? "entry" : "entries") ." with same IATA: ";
-    foreach($otherLocationsWithSameIata as $index=>$other) {
+    echo '<div>Other '.(count($otherLocationsWithSameIata) == 1 ? 'entry' : 'entries').' with same IATA: ';
+    foreach ($otherLocationsWithSameIata as $index => $other) {
         if ($index != 0) {
-            echo ", ";
+            echo ', ';
         }
-        echo "<a href='https://unlocode.info/$other->unlocode'>$other->unlocode</a>";
+        echo "<a href='https://unlocode.info/{$other->unlocode}'>{$other->unlocode}</a>";
         if ($other->warning) {
-            echo "<div class='tooltip'>!!<span class='tooltiptext'>$other->warning</span></div>";
+            echo "<div class='tooltip'>!!<span class='tooltiptext'>{$other->warning}</span></div>";
         }
     }
     echo ".</div>\n";
@@ -107,18 +108,18 @@ if ($otherLocationsWithSameIata) {
 
 $remarks = $details->remarks;
 if ($remarks) {
-    echo "<p>Remarks: $remarks</p>\n";
+    echo "<p>Remarks: {$remarks}</p>\n";
 }
 $coordinates = $details->coordinates;
 if ($coordinates) {
-    echo "<p>Coordinates: $coordinates => ".$details->degreesCoordinates->latitude .", ". $details->degreesCoordinates->longitude ." or ". $details->decimalCoordinates->latitude .", ". $details->decimalCoordinates->longitude ."</p>\n";
+    echo "<p>Coordinates: {$coordinates} => ".$details->degreesCoordinates->latitude.', '.$details->degreesCoordinates->longitude.' or '.$details->decimalCoordinates->latitude.', '.$details->decimalCoordinates->longitude."</p>\n";
 }
 ?>
 </div>
 <div style="flex: 3;">
 <?php
 if ($coordinates) {
-    echo '<iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=12&center='. urlencode($details->decimalCoordinates->latitude .",". $details->decimalCoordinates->longitude) .'&key='. $maps_key .'"></iframe>';
+    echo '<iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=12&center='.urlencode($details->decimalCoordinates->latitude.','.$details->decimalCoordinates->longitude).'&key='.$maps_key.'"></iframe>';
     // echo "<div id='leafletMap'></div>";
     // echo "<script>var map = L.map('leafletMap').setView([".$details->decimalCoordinates->latitude.", ". $details->decimalCoordinates->longitude ."], 13);
     // const urlTemplate = window.devicePixelRatio > 1 ? 'https://tile.osmand.net/hd//{z}/{x}/{y}.png' : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -133,13 +134,13 @@ if ($coordinates) {
 </div>
 </div>
 <div class="footer">
-From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?=$unlocodeVersion?></a>
+From <a href='https://unece.org/trade/uncefact/unlocode' target='_blank'><?= $unlocodeVersion?></a>
 <?php
 if ($details->status) {
-    echo " | $details->status";
+    echo " | {$details->status}";
 }
 if ($details->lastEnteredUpdated) {
-    echo " | Entry last entered/updated: ".$details->lastEnteredUpdated->month."-".$details->lastEnteredUpdated->year ."<br/>";
+    echo ' | Entry last entered/updated: '.$details->lastEnteredUpdated->month.'-'.$details->lastEnteredUpdated->year.'<br/>';
 }
 ?>
 </div>
