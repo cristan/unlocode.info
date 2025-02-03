@@ -13,16 +13,11 @@ I don't expect anyone to use this code to use a 1:1 copy of [unlocode.info](http
 
 ### Hosting the site ###
 
-It takes a little bit of effort to host this site. First of all: you need to create a secrets.php. It looks like this:
+It takes a little bit of effort to host this site. First of all: create a secrets.php by using secrets.sample.php as its basis. Enter your database info and your Google Maps key there.
 
-```
-<?php
-$db_host='localhost';
-$db_user='my_database_user';
-$db_password='my_database_password';
-$db_database='my_database';
-$maps_key='my_maps_key';
-?>
-```
+Also, the database needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs. 
 
-Also, the database needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs. I've added indices to country, location, subdivision and IATA.
+For the table `subdivision`, use subdivision-codes.csv, remove the first line with the headers and use this as the column names: `countryCode,code,name,type`
+For the table `CodeList`, use code-list.csv, remove the first line with the headers and use this as the column names: `ch,country,location,name,nameWoDiacritics,subdivision,status,function,date,IATA,coordinates,remarks`
+
+For performance, I've added indices to country, location, subdivision and IATA.
