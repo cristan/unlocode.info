@@ -15,9 +15,43 @@ I don't expect anyone to use this code to use a 1:1 copy of [unlocode.info](http
 
 It takes a little bit of effort to host this site. First of all: create a secrets.php by using secrets.sample.php as its basis. Enter your database info and your Google Maps key there.
 
-Also, the database needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs. 
+Also, we need database tables:
+```
+CREATE TABLE `CodeList` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ch` text NOT NULL,
+  `country` varchar(2) NOT NULL,
+  `location` varchar(3) NOT NULL,
+  `name` text NOT NULL,
+  `nameWoDiacritics` text NOT NULL,
+  `subdivision` text NOT NULL,
+  `status` text NOT NULL,
+  `function` text NOT NULL,
+  `date` text NOT NULL,
+  `IATA` text NOT NULL,
+  `coordinates` text NOT NULL,
+  `remarks` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `country` (`country`,`location`),
+  KEY `IATA` (`IATA`(768)),
+  KEY `country_2` (`country`),
+  KEY `location` (`location`),
+  KEY `subdivision` (`subdivision`(768))
+)
+```
+
+```
+CREATE TABLE `subdivision` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `countryCode` varchar(2) NOT NULL,
+  `code` varchar(3) NOT NULL,
+  `name` text NOT NULL,
+  `type` text NOT NULL,
+  PRIMARY KEY (`id`)
+)
+```
+
+The database also needs to be filled. You can use the CSV import in phpMyAdmin for this. You can use [datasets/un-locode](https://github.com/datasets/un-locode) for as a source of the CSVs. 
 
 For the table `subdivision`, use subdivision-codes.csv, remove the first line with the headers and use this as the column names: `countryCode,code,name,type`
 For the table `CodeList`, use code-list.csv, remove the first line with the headers and use this as the column names: `ch,country,location,name,nameWoDiacritics,subdivision,status,function,date,IATA,coordinates,remarks`
-
-For performance, I've added indices to country, location, subdivision and IATA.
