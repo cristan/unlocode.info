@@ -130,6 +130,10 @@ class DetailsLoader
         return $angle * $earthRadius;
     }
 
+    private function isSearchEngineBot() {
+        return preg_match('/googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|sogou|exabot/i', $_SERVER['HTTP_USER_AGENT']);
+    }
+
     private function enrich($country, $location, $connection, $locationFromDb)
     {
         $name = $locationFromDb['name'];
@@ -140,11 +144,19 @@ class DetailsLoader
 
         $toReturn = new stdClass();
         $unlocode = $country.$location;
-        if ($subdivision) {
+        
+        if ($this->isSearchEngineBot()) {
+            $toReturn->title = "UN/LOCODE {$unlocode}: Its location, region, coordinates and more";
+        } else if ($subdivision) {
             $toReturn->title = "{$unlocode}: {$name} - {$subdivision} - {$countryName} | UN/LOCODE info";
+        } else {
+            $toReturn->title = "{$unlocode}: {$name} - {$countryName} | UN/LOCODE info";
+        }
+        $toReturn->description = "Need to identify the UN/LOCODE {$unlocode}? Discover its location here.";
+
+        if ($subdivision) {
             $toReturn->header = "<a href='/country/{$country}'>{$country}</a>{$location}: {$name} - {$subdivision}";
         } else {
-            $toReturn->title = "{$unlocode}: {$name} - {$countryName}";
             $toReturn->header = "<a href='/country/{$country}'>{$country}</a>{$location}: {$name}";
         }
 
@@ -165,7 +177,6 @@ class DetailsLoader
             $toReturn->regionType = $region['type'] ?? 'Region';
             $toReturn->regionName = $region['name'] ?? null;
         }
-        $toReturn->description = "Details for UNLOCODE {$unlocode}: {$name} in ".($toReturn->regionName ?? $subdivision).", {$toReturn->country}. Discover functions, coordinates and more.";
 
         // Coordinates
         $coordinates = $locationFromDb['coordinates'];
