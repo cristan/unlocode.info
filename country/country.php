@@ -25,7 +25,7 @@ $countryName = $countries[$countryCode]
   <head>  
     <meta content="width=device-width, initial-scale=1" name="viewport" />	
     <title>UN/LOCODEs in <?= $countryName?>: Codes, Locations & Functions</title>
-    <meta name="description" content="All <?= count($details)?> UN/LOCODEs in <?= $countryName?>. Find the codes, functions, coordinates and more."/>
+    <meta name="description" content="All <?= count($details)?> UN/LOCODEs in <?= $countryName?> — each with a map, coordinates, and full details."/>
     <link rel="icon" href="../favicon.svg">
     <link rel="stylesheet" href="../flat-remix.min.css">
     <link rel="stylesheet" href="../unlocode.css">
