@@ -6,6 +6,7 @@ include 'coordinatesConverter.php';
 include 'statusConverter.php';
 include 'functionCodeConverter.php';
 include 'remarksConverter.php';
+include 'DescriptionBuilder.php';
 
 class DetailsLoader
 {
@@ -145,14 +146,11 @@ class DetailsLoader
         $toReturn = new stdClass();
         $unlocode = $country.$location;
         
-        if ($this->isSearchEngineBot()) {
-            $toReturn->title = "UN/LOCODE {$unlocode}: Its location, region, coordinates and more";
-        } else if ($subdivision) {
+        if ($subdivision) {
             $toReturn->title = "{$unlocode}: {$name} - {$subdivision} - {$countryName} | UN/LOCODE info";
         } else {
             $toReturn->title = "{$unlocode}: {$name} - {$countryName} | UN/LOCODE info";
         }
-        $toReturn->description = "Need to identify the UN/LOCODE {$unlocode}? Discover its location here.";
 
         if ($subdivision) {
             $toReturn->header = "<a href='/country/{$country}'>{$country}</a>{$location}: {$name} - {$subdivision}";
@@ -239,6 +237,15 @@ class DetailsLoader
 
             $toReturn->lastEnteredUpdated = $lastEnteredUpdated;
         }
+
+        $toReturn->description = DescriptionBuilder::build(
+            $unlocode,
+            $name,
+            $toReturn->functions,
+            $toReturn->regionName ?? null,
+            $countryName,
+            $toReturn->degreesCoordinates
+        );
 
         return $toReturn;
     }

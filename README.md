@@ -55,3 +55,10 @@ The database also needs to be filled. You can use the CSV import in phpMyAdmin f
 
 - For the table `subdivision`, use subdivision-codes.csv, remove the first line with the headers and use this as the column names: `countryCode,code,name,type`
 - For the table `CodeList`, use code-list.csv, remove the first line with the headers and use this as the column names: `ch,country,location,name,nameWoDiacritics,subdivision,status,function,date,IATA,coordinates,remarks`
+
+### Running the tests ###
+
+```bash
+composer install
+./vendor/bin/phpunit tests/
+```
