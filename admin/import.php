@@ -211,32 +211,41 @@ async function downloadFromGithub(filename, storeKey, btn) {
 }
 
 function parseCodeListCSV(text) {
-    // Expected headers: Change,Country,Location,Name,NameWoDiacritics,Subdivision,Status,Function,Date,IATA,Coordinates,Remarks
+    // Required headers: Change,Country,Location,Name,NameWoDiacritics,Subdivision,Status,Function,Date,IATA,Coordinates,Remarks
     const result = Papa.parse(text, { header: true, skipEmptyLines: true });
+    const fields = result.meta.fields ?? [];
+    for (const col of ['Change','Country','Location','Name','NameWoDiacritics','Subdivision','Status','Function','Date','IATA','Coordinates','Remarks']) {
+        if (!fields.includes(col)) throw new Error(`code-list.csv is missing column "${col}".`);
+    }
     return result.data.map(r => ({
-        ch:               r['Change']           ?? '',
-        country:          r['Country']          ?? '',
-        location:         r['Location']         ?? '',
-        name:             r['Name']             ?? '',
-        nameWoDiacritics: r['NameWoDiacritics'] ?? '',
-        subdivision:      r['Subdivision']      ?? '',
-        status:           r['Status']           ?? '',
-        function:         r['Function']         ?? '',
-        date:             r['Date']             ?? '',
-        IATA:             r['IATA']             ?? '',
-        coordinates:      r['Coordinates']      ?? '',
-        remarks:          r['Remarks']          ?? '',
+        ch:               r['Change'],
+        country:          r['Country'],
+        location:         r['Location'],
+        name:             r['Name'],
+        nameWoDiacritics: r['NameWoDiacritics'],
+        subdivision:      r['Subdivision'],
+        status:           r['Status'],
+        function:         r['Function'],
+        date:             r['Date'],
+        IATA:             r['IATA'],
+        coordinates:      r['Coordinates'],
+        remarks:          r['Remarks'],
     }));
 }
 
 function parseSubdivisionCSV(text) {
-    // Expected headers: Country Code,Subdivision Code,Subdivision Name,Subdivision Type
+    // Required headers: SUCountry,SUCode,SUName,SUType
+    // Note: 2025-1 dropped SUType — use the 2024-2 subdivision-codes.csv instead.
     const result = Papa.parse(text, { header: true, skipEmptyLines: true });
+    const fields = result.meta.fields ?? [];
+    for (const col of ['SUCountry', 'SUCode', 'SUName', 'SUType']) {
+        if (!fields.includes(col)) throw new Error(`subdivision-codes.csv is missing column "${col}". Use the 2024-2 version of this file.`);
+    }
     return result.data.map(r => ({
-        countryCode: r['Country Code']      ?? '',
-        code:        r['Subdivision Code']  ?? '',
-        name:        r['Subdivision Name']  ?? '',
-        type:        r['Subdivision Type']  ?? '',
+        countryCode: r['SUCountry'],
+        code:        r['SUCode'],
+        name:        r['SUName'],
+        type:        r['SUType'],
     }));
 }
 
