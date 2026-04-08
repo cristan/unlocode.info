@@ -176,6 +176,7 @@ class DetailsLoader
         $coordinates = $locationFromDb['coordinates'];
         $toReturn->coordinates = $coordinates;
         $toReturn->decimalCoordinates = null;
+        $toReturn->degreesCoordinates = null;
         if ($coordinates) {
             $coordinatesConverter = new CoordinatesConverter();
             $toReturn->decimalCoordinates = $coordinatesConverter->convertToDecimal($coordinates);
