@@ -2,12 +2,16 @@
 
 class DescriptionBuilder
 {
+    // Maps official function descriptions to human-readable display names for prose.
+    // Only codes that appear in PRIORITY need an entry here.
+    private const FUNCTION_DISPLAY_NAMES = [
+        'maritime transport (sea port or maritime port)' => 'port',
+        'cross border (former code; not to be used)'     => 'border crossing',
+    ];
+
     // Functions we're willing to name in a description, in priority order.
-    // 'To be specified', 'Postal exchange office', and unknown/future codes are
-    // intentionally absent — they will be silently skipped.
-    // Only include function types that are unambiguous and meaningful to a general audience.
-    // Airport, rail terminal, road terminal etc. are connectivity codes in the UN/LOCODE
-    // standard — they don't reliably identify what a location *is*, so we leave them out.
+    // Connectivity codes (rail, road, air, multimodal) are intentionally absent —
+    // they don't reliably identify what a location *is*, so we leave them out.
     private const PRIORITY = [
         'port'            => 1,
         'border crossing' => 2,
@@ -87,9 +91,10 @@ class DescriptionBuilder
 
         foreach ($functions as $f) {
             $lower = strtolower($f);
-            if (isset(self::PRIORITY[$lower]) && self::PRIORITY[$lower] < $bestPriority) {
-                $best = $lower;
-                $bestPriority = self::PRIORITY[$lower];
+            $displayName = self::FUNCTION_DISPLAY_NAMES[$lower] ?? $lower;
+            if (isset(self::PRIORITY[$displayName]) && self::PRIORITY[$displayName] < $bestPriority) {
+                $best = $displayName;
+                $bestPriority = self::PRIORITY[$displayName];
             }
         }
 

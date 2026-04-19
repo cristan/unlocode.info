@@ -65,7 +65,7 @@ class DescriptionBuilderTest extends TestCase
     }
 
     // ── Function codes excluded from description ───────────────────────────────
-    // 'To be specified' and 'Postal exchange office' say nothing useful about a location.
+    // 'Not officially functional' and 'Mail Processing Centre (IMPC)' say nothing about a location any visitor would likely care about.
 
     public function test_to_be_specified_excluded(): void
     {

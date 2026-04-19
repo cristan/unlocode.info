@@ -3,15 +3,26 @@
 class FunctionCodeConverter
 {
     private $functionMap = [
-        '0' => 'To be specified',
-        '1' => 'Port',
-        '2' => 'Rail terminal',
-        '3' => 'Road terminal',
-        '4' => 'Airport',
-        '5' => 'Postal exchange office',
-        '6' => 'Multimodal Functions (ICDs, etc.)',
+        '0' => 'Not officially functional',
+
+        // Original: Maritime transport (sea port or maritime port)
+        '1' => 'Maritime transport (sea port or maritime port)',
+        '2' => 'Rail transport',
+        '3' => 'Road transport',
+
+        // Original: Air transport (airport) or space transport (spaceport)
+        '4' => 'Air transport',
+
+        // Original: "International Mail Processing Centre (IMPC) recognized by the Universal Postal Union (UPU)"
+        '5' => 'Mail Processing Centre (IMPC)',
+        '6' => 'Multimodal transport facility',
+
+        // Original: Fixed Transport Installation (oil pipeline terminal, electric power lines, ropeway terminals, etc.)
         '7' => 'Fixed Transport Functions (e.g. Oil platform)',
-        '8' => 'Inland port',
+
+        // Original: Inland water transport (river ports, and lake ports)
+        '8' => 'Inland water transport',
+        'A' => 'Special Economic Zone (SEZ)',
         'B' => 'Border crossing',
     ];
 
