@@ -20,8 +20,8 @@ if (! $details) {
 
 ?>
 <!DOCTYPE html>
-<html>
-  <head>  
+<html lang="en">
+  <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />	
     <title><?= $details->title?></title>
     <meta name="description" content="<?= $details->description?>"/>
