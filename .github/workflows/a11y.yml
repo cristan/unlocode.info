@@ -44,25 +44,65 @@ jobs:
 
       - name: Create CI secrets
         run: |
-          cat > secrets.php << 'EOF'
-          <?php
-          $db_host     = '127.0.0.1';
-          $db_user     = 'root';
-          $db_password = 'root';
-          $db_database = 'unlocode';
-          $maps_key    = '';
-          $import_user   = 'admin';
-          $import_secret = 'secret';
-          EOF
+          {
+            echo '<?php'
+            echo '$db_host     = "127.0.0.1";'
+            echo '$db_user     = "root";'
+            echo '$db_password = "root";'
+            echo '$db_database = "unlocode";'
+            echo '$maps_key    = "";'
+            echo '$import_user   = "admin";'
+            echo '$import_secret = "secret";'
+          } > secrets.php
 
       - name: Seed database
         run: mysql -h 127.0.0.1 -u root -proot unlocode < e2e/seed.sql
 
       - name: Start PHP development server
-        run: php -S 127.0.0.1:8080 e2e/router.php &
+        run: php -d "include_path=.:$(pwd)" -S 127.0.0.1:8080 e2e/router.php > /tmp/php-server.log 2>&1 &
 
-      - name: Wait for PHP server
-        run: curl --retry 10 --retry-connrefused --retry-delay 1 -s http://127.0.0.1:8080/ > /dev/null
+      - name: Verify DB seed
+        run: mysql -h 127.0.0.1 -u root -proot unlocode -e "SELECT country, location, name FROM CodeList;"
+
+      - name: Test PHP include chain directly
+        run: |
+          cd country && php -d "include_path=.:$(pwd)/.." -r "
+            \$_GET['countryCode'] = 'NL';
+            include '../include.php';
+            include 'countryLoader.php';
+            include '../countryList.php';
+            \$loader = new CountryLoader();
+            \$result = \$loader->loadCountry('NL');
+            echo count(\$result) . ' entries found' . PHP_EOL;
+          "
+          cd "$GITHUB_WORKSPACE/details" && php -d "include_path=.:$(pwd)/.." -r "
+            include '../secrets.php';
+            include '../include.php';
+            include 'detailsLoader.php';
+            \$loader = new DetailsLoader();
+            \$result = \$loader->loadDetails('NLRTM');
+            if (\$result) {
+              echo 'Detail page OK: title=' . \$result->title . PHP_EOL;
+            } else {
+              echo 'Detail page: loadDetails returned null' . PHP_EOL;
+            }
+          "
+
+      - name: Verify PHP server renders correctly
+        run: |
+          curl --retry 10 --retry-connrefused --retry-delay 1 -s http://127.0.0.1:8080/ | grep -q '<html' || (echo "Homepage did not return HTML" && exit 1)
+          COUNTRY=$(curl -s http://127.0.0.1:8080/country/NL)
+          HTTP_CODE=$(curl -o /dev/null -s -w "%{http_code}" http://127.0.0.1:8080/country/NL)
+          echo "$COUNTRY" | grep -q 'lang=' || {
+            echo "::error::HTTP $HTTP_CODE | response: $(echo "$COUNTRY" | head -3 | tr '\n' '|') | phplog: $(cat /tmp/php-server.log | grep -v '^$' | tail -5 | tr '\n' '|')"
+            exit 1
+          }
+          DETAIL=$(curl -s http://127.0.0.1:8080/NLRTM)
+          HTTP_CODE_DETAIL=$(curl -o /dev/null -s -w "%{http_code}" http://127.0.0.1:8080/NLRTM)
+          echo "$DETAIL" | grep -q 'lang=' || {
+            echo "::error::Detail page HTTP $HTTP_CODE_DETAIL | response: $(echo "$DETAIL" | head -5 | tr '\n' '|') | phplog: $(cat /tmp/php-server.log | grep -v '^$' | tail -10 | tr '\n' '|')"
+            exit 1
+          }
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
