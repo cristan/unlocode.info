@@ -50,3 +50,5 @@ Thumbs.db
 
 vendor/
 secrets.php
+e2e/a11y-report/
+e2e/playwright-report/

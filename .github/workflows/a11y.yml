@@ -1,0 +1,97 @@
+name: Accessibility
+
+on:
+  pull_request:
+
+jobs:
+  a11y:
+    name: WCAG accessibility scan
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: unlocode
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: mysqli
+          coverage: none
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
+
+      - name: Install PHP dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Create CI secrets
+        run: |
+          cat > secrets.php << 'EOF'
+          <?php
+          $db_host     = '127.0.0.1';
+          $db_user     = 'root';
+          $db_password = 'root';
+          $db_database = 'unlocode';
+          $maps_key    = '';
+          $import_user   = 'admin';
+          $import_secret = 'secret';
+          EOF
+
+      - name: Seed database
+        run: mysql -h 127.0.0.1 -u root -proot unlocode < e2e/seed.sql
+
+      - name: Start PHP development server
+        run: php -S 127.0.0.1:8080 e2e/router.php &
+
+      - name: Wait for PHP server
+        run: curl --retry 10 --retry-connrefused --retry-delay 1 -s http://127.0.0.1:8080/ > /dev/null
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: e2e/package-lock.json
+
+      - name: Install Node.js dependencies
+        working-directory: e2e
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ hashFiles('e2e/package-lock.json') }}
+
+      - name: Install Playwright browsers (Chromium only)
+        working-directory: e2e
+        run: npx playwright install --with-deps chromium
+
+      - name: Run accessibility tests
+        working-directory: e2e
+        run: npx playwright test --project=chromium
+
+      - name: Upload a11y report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: a11y-report
+          path: e2e/a11y-report/
