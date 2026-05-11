@@ -21,8 +21,8 @@ if (! $details) {
 $countryName = $countries[$countryCode]
 ?>
 <!DOCTYPE html>
-<html>
-  <head>  
+<html lang="en">
+  <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />	
     <title>UN/LOCODEs in <?= $countryName?>: Codes, Locations & Functions</title>
     <meta name="description" content="All <?= count($details)?> UN/LOCODEs in <?= $countryName?> — each with a map, coordinates, and full details."/>

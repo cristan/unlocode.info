@@ -22,8 +22,8 @@ if (! $details) {
 $countryName = $countries[$countryCode]
 ?>
 <!DOCTYPE html>
-<html>
-  <head>  
+<html lang="en">
+  <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />	
     <title><?= $countryName?></title>
     <meta name="description" content="Explore UNLOCODEs for <?= $countryName?>. Find codes for ports, rail terminals, road terminals, airports, and more."/>
