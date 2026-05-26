@@ -20,9 +20,9 @@ if (! $details) {
 
 ?>
 <!DOCTYPE html>
-<html>
-  <head>  
-    <meta content="width=device-width, initial-scale=1" name="viewport" />	
+<html lang="en">
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title><?= $details->title?></title>
     <meta name="description" content="<?= $details->description?>"/>
     <link rel="icon" href="favicon.svg">
