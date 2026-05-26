@@ -28,7 +28,7 @@ $countryName = $countries[$countryCode]
     <title><?= $countryName?></title>
     <meta name="description" content="Explore UNLOCODEs for <?= $countryName?>. Find codes for ports, rail terminals, road terminals, airports, and more."/>
     <link rel="icon" href="../favicon.svg">
-    <link rel="stylesheet" href="../flat-remix.min.css">
+    <link rel="stylesheet" href="../flat-remix.css">
     <link rel="stylesheet" href="../unlocode.css">
   </head>
   <body class="selectable">

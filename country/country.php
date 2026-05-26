@@ -27,7 +27,7 @@ $countryName = $countries[$countryCode]
     <title>UN/LOCODEs in <?= $countryName?>: Codes, Locations & Functions</title>
     <meta name="description" content="All <?= count($details)?> UN/LOCODEs in <?= $countryName?> — each with a map, coordinates, and full details."/>
     <link rel="icon" href="../favicon.svg">
-    <link rel="stylesheet" href="../flat-remix.min.css">
+    <link rel="stylesheet" href="../flat-remix.css">
     <link rel="stylesheet" href="../unlocode.css">
   </head>
   <body class="selectable">

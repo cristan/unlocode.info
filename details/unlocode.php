@@ -26,7 +26,7 @@ if (! $details) {
     <title><?= $details->title?></title>
     <meta name="description" content="<?= $details->description?>"/>
     <link rel="icon" href="favicon.svg">
-    <link rel="stylesheet" href="flat-remix.min.css">
+    <link rel="stylesheet" href="flat-remix.css">
     <link rel="stylesheet" href="unlocode.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="

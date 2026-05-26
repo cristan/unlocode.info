@@ -5,7 +5,7 @@
     <title>Unlocode.info | Info about every UN/LOCODE</title>
     <meta name="description" content="All the UN/LOCODEs, five-character codes for every location used in international trade."/>
     <link rel="icon" href="favicon.svg">
-    <link rel="stylesheet" href="flat-remix.min.css">
+    <link rel="stylesheet" href="flat-remix.css">
     <link rel="stylesheet" href="unlocode.css">
     <link
       rel="stylesheet"
