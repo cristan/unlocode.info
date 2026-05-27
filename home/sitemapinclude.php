@@ -1,7 +1,7 @@
 <?php
 
 // lastmod format is YYYY-MM-DD
-$homeLastMod = '2025-05-26';
+$homeLastMod = '2025-05-28';
 $countryLastMod = '2026-05-26';
 $unlocodeLastMod = '2026-05-26';
 
