@@ -66,10 +66,8 @@ class CoordinatesConverter
             $lonDegrees = floor($lon);
             $lonMinutes = ($lon - $lonDegrees) * 60;
 
-            // Format the degrees and minutes with leading zeros
-            $latDegrees = sprintf('%02d', $latDegrees);
+            // Format the minutes with leading zeros
             $latMinutes = sprintf('%02d', round($latMinutes));
-            $lonDegrees = sprintf('%03d', $lonDegrees);
             $lonMinutes = sprintf('%02d', round($lonMinutes));
 
             // Construct the formatted coordinates object
@@ -96,9 +94,7 @@ class CoordinatesConverter
         $lonDirection = $matches[6];
 
         // Add decimals when needed
-        $latDegrees = sprintf('%02d', $latDegrees);
         $latMinutes = sprintf('%02d', $latMinutes);
-        $lonDegrees = sprintf('%03d', $lonDegrees);
         $lonMinutes = sprintf('%02d', $lonMinutes);
 
         $coordinates = new stdClass();

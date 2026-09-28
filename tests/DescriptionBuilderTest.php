@@ -32,7 +32,7 @@ class DescriptionBuilderTest extends TestCase
     public function test_port_beats_rail_terminal_road_terminal_and_airport(): void
     {
         $this->assertSame(
-            "SEGOT is the UN/LOCODE for Göteborg, a port in Västra Götalands län, Sweden. Coordinates: 57°43'N, 011°58'E.",
+            "SEGOT is the UN/LOCODE for Göteborg, a port in Västra Götalands län, Sweden. Coordinates: 57°43'N, 11°58'E.",
             DescriptionBuilder::build('SEGOT', 'Göteborg', $this->functionNames('12345---'), 'Västra Götalands län', 'Sweden', $this->coordinatesDegrees('5743N 01158E'))
         );
     }
@@ -40,7 +40,7 @@ class DescriptionBuilderTest extends TestCase
     public function test_port_beats_road_terminal_and_airport(): void
     {
         $this->assertSame(
-            "AEAUH is the UN/LOCODE for Abu Dhabi, a port in Abū Z̧aby [Abu Dhabi], United Arab Emirates. Coordinates: 24°28'N, 054°22'E.",
+            "AEAUH is the UN/LOCODE for Abu Dhabi, a port in Abū Z̧aby [Abu Dhabi], United Arab Emirates. Coordinates: 24°28'N, 54°22'E.",
             DescriptionBuilder::build('AEAUH', 'Abu Dhabi', $this->functionNames('1-345---'), 'Abū Z̧aby [Abu Dhabi]', 'United Arab Emirates (the)', $this->coordinatesDegrees('2428N 05422E'))
         );
     }
@@ -50,7 +50,7 @@ class DescriptionBuilderTest extends TestCase
     public function test_border_crossing_only(): void
     {
         $this->assertSame(
-            "BHKFC is the UN/LOCODE for King Fahed Causeway, a border crossing in Ash Shamālīyah, Bahrain. Coordinates: 26°11'N, 050°19'E.",
+            "BHKFC is the UN/LOCODE for King Fahed Causeway, a border crossing in Ash Shamālīyah, Bahrain. Coordinates: 26°11'N, 50°19'E.",
             DescriptionBuilder::build('BHKFC', 'King Fahed Causeway', $this->functionNames('-------B'), 'Ash Shamālīyah', 'Bahrain', $this->coordinatesDegrees('2611N 05019E'))
         );
     }
@@ -59,7 +59,7 @@ class DescriptionBuilderTest extends TestCase
     public function test_border_crossing_when_multimodal_also_present(): void
     {
         $this->assertSame(
-            "INHND is the UN/LOCODE for Hemnagar Lcs, a border crossing in West Bengal, India. Coordinates: 22°27'N, 088°58'E.",
+            "INHND is the UN/LOCODE for Hemnagar Lcs, a border crossing in West Bengal, India. Coordinates: 22°27'N, 88°58'E.",
             DescriptionBuilder::build('INHND', 'Hemnagar Lcs', $this->functionNames('-----6-B'), 'West Bengal', 'India', $this->coordinatesDegrees('2227N 08858E'))
         );
     }
